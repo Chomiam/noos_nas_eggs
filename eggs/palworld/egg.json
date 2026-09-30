@@ -1,0 +1,54 @@
+{
+  "id": "palworld",
+  "name": "Palworld Dedicated Server",
+  "author": "Pocketpair & SteamCMD",
+  "category": "Aventure / Survie",
+  "icon": "🐾",
+  "tagline": "Serveur multijoueur Palworld avec multithreading et persistance",
+  "description": "Serveur dédié officiel Palworld via SteamCMD avec optimisation multithread, gestion de sauvegarde automatique, allocation mémoire dynamique et support jusqu'à 32 joueurs.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/palworld/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/palworld/banner.jpg",
+  "steam_app_id": "2394010",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 8211,
+  "port_protocol": "udp",
+  "extra_ports": [],
+  "default_memory_mb": 8192,
+  "min_memory_mb": 4096,
+  "startup_cmd": "./PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS -port={{SERVER_PORT}} -players={{MAX_PLAYERS}}",
+  "variables": [
+    {
+      "name": "Nom du serveur Palworld",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom affiché dans la liste des serveurs de jeu",
+      "default_value": "Serveur Palworld STEvE_OS",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mot de passe d'accès (Optionnel)",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Mot de passe requis pour rejoindre (laisser vide si public)",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Mot de passe Administrateur",
+      "env_variable": "ADMIN_PASSWORD",
+      "description": "Mot de passe pour les commandes d'administration (/AdminPassword)",
+      "default_value": "SteveAdminPass123!",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Joueurs Maximum",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Nombre maximum de joueurs simultanés",
+      "default_value": "32",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

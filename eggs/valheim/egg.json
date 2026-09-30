@@ -1,0 +1,52 @@
+{
+  "id": "valheim",
+  "name": "Valheim Dedicated Server",
+  "author": "Iron Gate & SteamCMD",
+  "category": "Survie Mythologique",
+  "icon": "⚔️",
+  "tagline": "Serveur dédié viking persistant dans un monde procédural nordique",
+  "description": "Serveur dédié Valheim viking multijoueur persistant avec téléchargement automatique des mises à jour Steam, génération de monde procédural et persistance des sauvegardes.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/valheim/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/valheim/banner.jpg",
+  "steam_app_id": "896660",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 2456,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 2457,
+      "protocol": "udp",
+      "description": "Port de requête Steam Query"
+    }
+  ],
+  "default_memory_mb": 4096,
+  "min_memory_mb": 2048,
+  "startup_cmd": "./valheim_server.x86_64 -name \"{{SERVER_NAME}}\" -port {{SERVER_PORT}} -world \"{{WORLD_NAME}}\" -password \"{{SERVER_PASSWORD}}\" -public 1",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom de votre serveur Valheim",
+      "default_value": "Valheim STEvE_OS World",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Nom du monde",
+      "env_variable": "WORLD_NAME",
+      "description": "Nom du fichier de sauvegarde du monde",
+      "default_value": "Dedicated",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mot de passe (Min 5 car.)",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Obligatoire par Valheim (minimum 5 caractères)",
+      "default_value": "Valheim123",
+      "input_type": "password",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

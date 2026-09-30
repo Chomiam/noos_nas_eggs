@@ -1,0 +1,68 @@
+{
+  "id": "rust",
+  "name": "Rust Dedicated Server",
+  "author": "Facepunch Studios & SteamCMD",
+  "category": "Survie PvP / Sandbox",
+  "icon": "🏹",
+  "tagline": "Survie sans pitié, construction de base et PvP brutal",
+  "description": "Serveur dédié officiel Rust avec téléchargement SteamCMD, génération de cartes procédurales (Procedural Map / Barren), administration RCON web et gestion de serveurs haut débit.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/rust/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/rust/banner.jpg",
+  "steam_app_id": "258550",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 28015,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 28016,
+      "protocol": "tcp",
+      "description": "Port d'administration Web RCON"
+    }
+  ],
+  "default_memory_mb": 8192,
+  "min_memory_mb": 4096,
+  "startup_cmd": "./RustDedicated -batchmode -server.port {{SERVER_PORT}} -server.identity \"{{SERVER_IDENTITY}}\" -server.hostname \"{{SERVER_NAME}}\" -server.seed {{SERVER_SEED}} -server.maxplayers {{MAX_PLAYERS}} -rcon.port 28016 -rcon.password \"{{RCON_PASSWORD}}\" -rcon.web 1",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom affiché dans le navigateur de serveurs Rust",
+      "default_value": "Serveur Rust STEvE_OS",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Identifiant de sauvegarde",
+      "env_variable": "SERVER_IDENTITY",
+      "description": "Dossier interne de la sauvegarde de carte",
+      "default_value": "steveos_rust",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Graine de carte (Seed)",
+      "env_variable": "SERVER_SEED",
+      "description": "Graine aléatoire pour la génération procédurale",
+      "default_value": "12345",
+      "input_type": "number",
+      "options": null
+    },
+    {
+      "name": "Joueurs Maximum",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Capacité maximale de joueurs",
+      "default_value": "50",
+      "input_type": "number",
+      "options": null
+    },
+    {
+      "name": "Mot de passe RCON Web",
+      "env_variable": "RCON_PASSWORD",
+      "description": "Mot de passe pour console web RCON",
+      "default_value": "SteveRcon123!",
+      "input_type": "password",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

@@ -1,0 +1,46 @@
+{
+  "id": "terraria",
+  "name": "Terraria Dedicated Server",
+  "author": "Re-Logic & STEvE_OS",
+  "category": "Aventure / Sandbox 2D",
+  "icon": "🌳",
+  "tagline": "Exploration, construction et combats de boss en 2D multijoueur",
+  "description": "Serveur dédié Terraria multijoueur persistant avec génération de mondes (Petit, Moyen, Grand), sélection de difficulté classique/expert/master et persistance complète des cartes.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/terraria/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/terraria/banner.jpg",
+  "steam_app_id": null,
+  "docker_image": "ghcr.io/parkervcp/yolks:mono",
+  "default_port": 7777,
+  "port_protocol": "both",
+  "extra_ports": [],
+  "default_memory_mb": 2048,
+  "min_memory_mb": 1024,
+  "startup_cmd": "mono --server --gc=sgen -O=all TerrariaServer.exe -port {{SERVER_PORT}} -players {{MAX_PLAYERS}} -worldname \"{{WORLD_NAME}}\" -autocreate 2",
+  "variables": [
+    {
+      "name": "Nom du monde",
+      "env_variable": "WORLD_NAME",
+      "description": "Nom du fichier de monde Terraria",
+      "default_value": "SteveWorld",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mot de passe du serveur",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Mot de passe requis pour se connecter (laisser vide si public)",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Joueurs Maximum",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Slots simultanés autorisés",
+      "default_value": "16",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

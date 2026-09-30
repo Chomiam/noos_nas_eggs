@@ -1,0 +1,80 @@
+{
+  "id": "minecraft-java",
+  "name": "Minecraft: Java Edition",
+  "author": "PaperMC & STEvE_OS",
+  "category": "Bac à sable / Survie",
+  "icon": "⛏️",
+  "tagline": "Serveur Minecraft Java haute performance propulsé par PaperMC 1.21+",
+  "description": "Serveur dédié Java haute performance supportant les plugins Spigot/Paper, l'optimisation moderne du ramasse-miettes (G1GC), le téléchargement automatique des versions et l'EULA pré-validée.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/minecraft-java/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/minecraft-java/banner.png",
+  "steam_app_id": null,
+  "docker_image": "ghcr.io/pterodactyl/yolks:java_21",
+  "default_port": 25565,
+  "port_protocol": "both",
+  "extra_ports": [],
+  "default_memory_mb": 4096,
+  "min_memory_mb": 2048,
+  "startup_cmd": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -XX:+UseG1GC -jar server.jar nogui",
+  "variables": [
+    {
+      "name": "Version Minecraft",
+      "env_variable": "MINECRAFT_VERSION",
+      "description": "Version de PaperMC / Minecraft à déployer",
+      "default_value": "1.21.1",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Moteur / Loader",
+      "env_variable": "LOADER",
+      "description": "Type de serveur Minecraft",
+      "default_value": "paper",
+      "input_type": "select",
+      "options": [
+        "paper",
+        "purpur",
+        "fabric",
+        "vanilla"
+      ]
+    },
+    {
+      "name": "Message du jour (MOTD)",
+      "env_variable": "MOTD",
+      "description": "Description affichée dans la liste des serveurs",
+      "default_value": "Serveur Minecraft propulsé par STEvE_OS NAS",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Joueurs Maximum",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Slots simultanés autorisés",
+      "default_value": "20",
+      "input_type": "number",
+      "options": null
+    },
+    {
+      "name": "Difficulté",
+      "env_variable": "DIFFICULTY",
+      "description": "Difficulté du monde Minecraft",
+      "default_value": "normal",
+      "input_type": "select",
+      "options": [
+        "peaceful",
+        "easy",
+        "normal",
+        "hard"
+      ]
+    },
+    {
+      "name": "Mode en ligne (Authentification Mojang)",
+      "env_variable": "ONLINE_MODE",
+      "description": "Vérifier les comptes Minecraft officiels (false autorise les versions non vérifiées)",
+      "default_value": "true",
+      "input_type": "boolean",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}
