@@ -1,250 +1,9 @@
 {
-  "version": "1.0.0",
-  "updated_at": "2026-09-30T18:45:00Z",
+  "version": "1.1.0",
+  "last_updated": "2026-09-30T19:16:00Z",
   "repository": "https://github.com/Chomiam/steve_nas_eggs",
-  "total_eggs": 8,
+  "total_eggs": 10,
   "eggs": [
-    {
-      "id": "minecraft-java",
-      "name": "Minecraft: Java Edition",
-      "author": "PaperMC & STEvE_OS",
-      "category": "Bac à sable / Survie",
-      "icon": "⛏️",
-      "tagline": "Serveur Minecraft Java haute performance propulsé par PaperMC 1.21+",
-      "description": "Serveur dédié Java haute performance supportant les plugins Spigot/Paper, l'optimisation moderne du ramasse-miettes (G1GC), le téléchargement automatique des versions et l'EULA pré-validée.",
-      "icon_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/minecraft-java/icon.png",
-      "banner_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/minecraft-java/banner.png",
-      "steam_app_id": null,
-      "docker_image": "ghcr.io/pterodactyl/yolks:java_21",
-      "default_port": 25565,
-      "port_protocol": "both",
-      "extra_ports": [],
-      "default_memory_mb": 4096,
-      "min_memory_mb": 2048,
-      "startup_cmd": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -XX:+UseG1GC -jar server.jar nogui",
-      "variables": [
-        {
-          "name": "Version Minecraft",
-          "env_variable": "MINECRAFT_VERSION",
-          "description": "Version de PaperMC / Minecraft à déployer",
-          "default_value": "1.21.1",
-          "input_type": "text",
-          "options": null
-        },
-        {
-          "name": "Moteur / Loader",
-          "env_variable": "LOADER",
-          "description": "Type de serveur Minecraft",
-          "default_value": "paper",
-          "input_type": "select",
-          "options": [
-            "paper",
-            "purpur",
-            "fabric",
-            "vanilla"
-          ]
-        },
-        {
-          "name": "Message du jour (MOTD)",
-          "env_variable": "MOTD",
-          "description": "Description affichée dans la liste des serveurs",
-          "default_value": "Serveur Minecraft propulsé par STEvE_OS NAS",
-          "input_type": "text",
-          "options": null
-        },
-        {
-          "name": "Joueurs Maximum",
-          "env_variable": "MAX_PLAYERS",
-          "description": "Slots simultanés autorisés",
-          "default_value": "20",
-          "input_type": "number",
-          "options": null
-        },
-        {
-          "name": "Difficulté",
-          "env_variable": "DIFFICULTY",
-          "description": "Difficulté du monde Minecraft",
-          "default_value": "normal",
-          "input_type": "select",
-          "options": [
-            "peaceful",
-            "easy",
-            "normal",
-            "hard"
-          ]
-        },
-        {
-          "name": "Mode en ligne (Authentification Mojang)",
-          "env_variable": "ONLINE_MODE",
-          "description": "Vérifier les comptes Minecraft officiels (false autorise les versions non vérifiées)",
-          "default_value": "true",
-          "input_type": "boolean",
-          "options": null
-        }
-      ],
-      "is_custom": false
-    },
-    {
-      "id": "minecraft-bedrock",
-      "name": "Minecraft: Bedrock Edition",
-      "author": "Mojang & STEvE_OS",
-      "category": "Bac à sable / Survie",
-      "icon": "🧱",
-      "tagline": "Serveur officiel Mojang BDS pour consoles, smartphones et Windows 10/11",
-      "description": "Serveur dédié officiel Mojang BDS (Bedrock Dedicated Server) permettant le jeu croisé (cross-play) entre consoles (Nintendo Switch, PS4/PS5, Xbox), mobiles (iOS, Android) et PC Windows 10/11.",
-      "icon_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/minecraft-bedrock/icon.svg",
-      "banner_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/minecraft-bedrock/banner.png",
-      "steam_app_id": null,
-      "docker_image": "ghcr.io/parkervcp/yolks:ubuntu",
-      "default_port": 19132,
-      "port_protocol": "udp",
-      "extra_ports": [],
-      "default_memory_mb": 2048,
-      "min_memory_mb": 1024,
-      "startup_cmd": "LD_LIBRARY_PATH=. ./bedrock_server",
-      "variables": [
-        {
-          "name": "Nom du serveur",
-          "env_variable": "SERVER_NAME",
-          "description": "Nom affiché aux joueurs Bedrock",
-          "default_value": "STEvE_OS Bedrock World",
-          "input_type": "text",
-          "options": null
-        },
-        {
-          "name": "Mode de jeu",
-          "env_variable": "GAMEMODE",
-          "description": "Mode par défaut des nouveaux joueurs",
-          "default_value": "survival",
-          "input_type": "select",
-          "options": [
-            "survival",
-            "creative",
-            "adventure"
-          ]
-        },
-        {
-          "name": "Difficulté",
-          "env_variable": "DIFFICULTY",
-          "description": "Difficulté du monde Bedrock",
-          "default_value": "normal",
-          "input_type": "select",
-          "options": [
-            "peaceful",
-            "easy",
-            "normal",
-            "hard"
-          ]
-        }
-      ],
-      "is_custom": false
-    },
-    {
-      "id": "palworld",
-      "name": "Palworld Dedicated Server",
-      "author": "Pocketpair & SteamCMD",
-      "category": "Aventure / Survie",
-      "icon": "🐾",
-      "tagline": "Serveur multijoueur Palworld avec multithreading et persistance",
-      "description": "Serveur dédié officiel Palworld via SteamCMD avec optimisation multithread, gestion de sauvegarde automatique, allocation mémoire dynamique et support jusqu'à 32 joueurs.",
-      "icon_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/palworld/icon.png",
-      "banner_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/palworld/banner.jpg",
-      "steam_app_id": "2394010",
-      "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
-      "default_port": 8211,
-      "port_protocol": "udp",
-      "extra_ports": [],
-      "default_memory_mb": 8192,
-      "min_memory_mb": 4096,
-      "startup_cmd": "./PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS -port={{SERVER_PORT}} -players={{MAX_PLAYERS}}",
-      "variables": [
-        {
-          "name": "Nom du serveur Palworld",
-          "env_variable": "SERVER_NAME",
-          "description": "Nom affiché dans la liste des serveurs de jeu",
-          "default_value": "Serveur Palworld STEvE_OS",
-          "input_type": "text",
-          "options": null
-        },
-        {
-          "name": "Mot de passe d'accès (Optionnel)",
-          "env_variable": "SERVER_PASSWORD",
-          "description": "Mot de passe requis pour rejoindre (laisser vide si public)",
-          "default_value": "",
-          "input_type": "password",
-          "options": null
-        },
-        {
-          "name": "Mot de passe Administrateur",
-          "env_variable": "ADMIN_PASSWORD",
-          "description": "Mot de passe pour les commandes d'administration (/AdminPassword)",
-          "default_value": "SteveAdminPass123!",
-          "input_type": "password",
-          "options": null
-        },
-        {
-          "name": "Joueurs Maximum",
-          "env_variable": "MAX_PLAYERS",
-          "description": "Nombre maximum de joueurs simultanés",
-          "default_value": "32",
-          "input_type": "number",
-          "options": null
-        }
-      ],
-      "is_custom": false
-    },
-    {
-      "id": "valheim",
-      "name": "Valheim Dedicated Server",
-      "author": "Iron Gate & SteamCMD",
-      "category": "Survie Mythologique",
-      "icon": "⚔️",
-      "tagline": "Serveur dédié viking persistant dans un monde procédural nordique",
-      "description": "Serveur dédié Valheim viking multijoueur persistant avec téléchargement automatique des mises à jour Steam, génération de monde procédural et persistance des sauvegardes.",
-      "icon_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/valheim/icon.png",
-      "banner_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/valheim/banner.jpg",
-      "steam_app_id": "896660",
-      "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
-      "default_port": 2456,
-      "port_protocol": "udp",
-      "extra_ports": [
-        {
-          "port": 2457,
-          "protocol": "udp",
-          "description": "Port de requête Steam Query"
-        }
-      ],
-      "default_memory_mb": 4096,
-      "min_memory_mb": 2048,
-      "startup_cmd": "./valheim_server.x86_64 -name \"{{SERVER_NAME}}\" -port {{SERVER_PORT}} -world \"{{WORLD_NAME}}\" -password \"{{SERVER_PASSWORD}}\" -public 1",
-      "variables": [
-        {
-          "name": "Nom du serveur",
-          "env_variable": "SERVER_NAME",
-          "description": "Nom de votre serveur Valheim",
-          "default_value": "Valheim STEvE_OS World",
-          "input_type": "text",
-          "options": null
-        },
-        {
-          "name": "Nom du monde",
-          "env_variable": "WORLD_NAME",
-          "description": "Nom du fichier de sauvegarde du monde",
-          "default_value": "Dedicated",
-          "input_type": "text",
-          "options": null
-        },
-        {
-          "name": "Mot de passe (Min 5 car.)",
-          "env_variable": "SERVER_PASSWORD",
-          "description": "Obligatoire par Valheim (minimum 5 caractères)",
-          "default_value": "Valheim123",
-          "input_type": "password",
-          "options": null
-        }
-      ],
-      "is_custom": false
-    },
     {
       "id": "7daystodie",
       "name": "7 Days to Die Dedicated Server",
@@ -354,6 +113,364 @@
           "env_variable": "TELNET_PORT",
           "description": "Port de gestion Telnet local",
           "default_value": "8081",
+          "input_type": "number",
+          "options": null
+        }
+      ],
+      "is_custom": false
+    },
+    {
+      "id": "counter-strike-2",
+      "name": "Counter-Strike 2 Dedicated Server",
+      "author": "Valve Corporation & SteamCMD",
+      "category": "FPS Compétitif",
+      "icon": "🎯",
+      "tagline": "Le summum du tir tactique et compétitif par Valve",
+      "description": "Serveur dédié officiel Counter-Strike 2 (CS2) propulsé par le moteur Source 2 et SteamCMD sous Linux 64-bit natif, tickrate adaptatif subtick, gestion des tokens GSLT et configuration compétitive/casual.",
+      "icon_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/counter-strike-2/icon.png",
+      "banner_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/counter-strike-2/banner.jpg",
+      "steam_app_id": "730",
+      "docker_image": "ghcr.io/parkervcp/steamcmd:sniper",
+      "default_port": 27015,
+      "port_protocol": "both",
+      "extra_ports": [
+        {
+          "port": 27020,
+          "protocol": "udp",
+          "description": "Port SourceTV / GOTV"
+        }
+      ],
+      "default_memory_mb": 4096,
+      "min_memory_mb": 2048,
+      "startup_cmd": "./game/bin/linuxsteamrt64/cs2 -dedicated -ip 0.0.0.0 -port {{SERVER_PORT}} -tv_port 27020 -maxplayers {{MAX_PLAYERS}} +game_mode {{GAME_MODE}} +game_type {{GAME_TYPE}} +map {{SRCDS_MAP}} +hostname \"{{SERVER_NAME}}\" +sv_password \"{{SERVER_PASSWORD}}\" +rcon_password \"{{RCON_PASSWORD}}\" +sv_setsteamaccount {{STEAM_GSLT}}",
+      "variables": [
+        {
+          "name": "Nom du serveur",
+          "env_variable": "SERVER_NAME",
+          "description": "Nom affiché dans la liste des serveurs communautaires CS2",
+          "default_value": "Serveur CS2 STEvE_OS",
+          "input_type": "text",
+          "options": null
+        },
+        {
+          "name": "Carte de départ (Map)",
+          "env_variable": "SRCDS_MAP",
+          "description": "Carte initiale chargée au démarrage",
+          "default_value": "de_dust2",
+          "input_type": "select",
+          "options": [
+            "de_dust2",
+            "de_mirage",
+            "de_inferno",
+            "de_nuke",
+            "de_anubis",
+            "de_ancient",
+            "de_vertigo",
+            "cs_office",
+            "cs_italy"
+          ]
+        },
+        {
+          "name": "Nombre maximum de joueurs",
+          "env_variable": "MAX_PLAYERS",
+          "description": "Nombre de slots joueurs autorisés",
+          "default_value": "10",
+          "input_type": "number",
+          "options": null
+        },
+        {
+          "name": "Token GSLT Steam",
+          "env_variable": "STEAM_GSLT",
+          "description": "Jeton GSLT (Game Server Login Token) requis par Valve pour la liste publique",
+          "default_value": "",
+          "input_type": "password",
+          "options": null
+        },
+        {
+          "name": "Mot de passe Joueurs (Optionnel)",
+          "env_variable": "SERVER_PASSWORD",
+          "description": "Mot de passe requis pour se connecter (vide pour public)",
+          "default_value": "",
+          "input_type": "password",
+          "options": null
+        },
+        {
+          "name": "Mot de passe RCON",
+          "env_variable": "RCON_PASSWORD",
+          "description": "Mot de passe de télé-administration RCON console",
+          "default_value": "SteveRconAdmin123!",
+          "input_type": "password",
+          "options": null
+        },
+        {
+          "name": "Type de jeu (Game Type)",
+          "env_variable": "GAME_TYPE",
+          "description": "Type de jeu (0=Classique, 1=Occasionnel/Gungame)",
+          "default_value": "0",
+          "input_type": "select",
+          "options": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "name": "Mode de jeu (Game Mode)",
+          "env_variable": "GAME_MODE",
+          "description": "Mode de jeu (0=Casual, 1=Compétitif, 2=Course à l'armement)",
+          "default_value": "1",
+          "input_type": "select",
+          "options": [
+            "0",
+            "1",
+            "2"
+          ]
+        }
+      ],
+      "is_custom": false
+    },
+    {
+      "id": "enshrouded",
+      "name": "Enshrouded Dedicated Server",
+      "author": "Keen Games & SteamCMD",
+      "category": "Survie / Action RPG",
+      "icon": "⚔️",
+      "tagline": "Explorez le royaume déchu d'Embervale dans ce RPG de survie voxel",
+      "description": "Serveur dédié officiel Enshrouded via SteamCMD avec génération de monde persistant d'Embervale, physique de construction voxel avancée, progression coopérative jusqu'à 16 joueurs et combat d'action RPG.",
+      "icon_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/enshrouded/icon.png",
+      "banner_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/enshrouded/banner.jpg",
+      "steam_app_id": "2278520",
+      "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+      "default_port": 15636,
+      "port_protocol": "udp",
+      "extra_ports": [
+        {
+          "port": 15637,
+          "protocol": "udp",
+          "description": "Port de requête Steam Query"
+        }
+      ],
+      "default_memory_mb": 8192,
+      "min_memory_mb": 6144,
+      "startup_cmd": "rm -f ./logs/enshrouded_server.log; proton run ./enshrouded_server.exe & ENS_PID=$! ; tail -c0 -F ./logs/enshrouded_server.log --pid=$ENS_PID",
+      "variables": [
+        {
+          "name": "Nom du serveur",
+          "env_variable": "SERVER_NAME",
+          "description": "Nom affiché dans la liste des serveurs Enshrouded",
+          "default_value": "Serveur Enshrouded STEvE_OS",
+          "input_type": "text",
+          "options": null
+        },
+        {
+          "name": "Mot de passe Joueurs (Optionnel)",
+          "env_variable": "SERVER_PASSWORD",
+          "description": "Mot de passe requis pour rejoindre le monde (laisser vide si public)",
+          "default_value": "",
+          "input_type": "password",
+          "options": null
+        },
+        {
+          "name": "Nombre maximum de joueurs",
+          "env_variable": "MAX_PLAYERS",
+          "description": "Nombre maximum de joueurs simultanés dans Embervale",
+          "default_value": "16",
+          "input_type": "number",
+          "options": null
+        },
+        {
+          "name": "Dossier de sauvegarde",
+          "env_variable": "SAVE_DIR",
+          "description": "Répertoire local de persistance du monde",
+          "default_value": "./savegame",
+          "input_type": "text",
+          "options": null
+        }
+      ],
+      "is_custom": false
+    },
+    {
+      "id": "minecraft-bedrock",
+      "name": "Minecraft: Bedrock Edition",
+      "author": "Mojang & STEvE_OS",
+      "category": "Bac à sable / Survie",
+      "icon": "🧱",
+      "tagline": "Serveur officiel Mojang BDS pour consoles, smartphones et Windows 10/11",
+      "description": "Serveur dédié officiel Mojang BDS (Bedrock Dedicated Server) permettant le jeu croisé (cross-play) entre consoles (Nintendo Switch, PS4/PS5, Xbox), mobiles (iOS, Android) et PC Windows 10/11.",
+      "icon_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/minecraft-bedrock/icon.svg",
+      "banner_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/minecraft-bedrock/banner.png",
+      "steam_app_id": null,
+      "docker_image": "ghcr.io/parkervcp/yolks:ubuntu",
+      "default_port": 19132,
+      "port_protocol": "udp",
+      "extra_ports": [],
+      "default_memory_mb": 2048,
+      "min_memory_mb": 1024,
+      "startup_cmd": "LD_LIBRARY_PATH=. ./bedrock_server",
+      "variables": [
+        {
+          "name": "Nom du serveur",
+          "env_variable": "SERVER_NAME",
+          "description": "Nom affiché aux joueurs Bedrock",
+          "default_value": "STEvE_OS Bedrock World",
+          "input_type": "text",
+          "options": null
+        },
+        {
+          "name": "Mode de jeu",
+          "env_variable": "GAMEMODE",
+          "description": "Mode par défaut des nouveaux joueurs",
+          "default_value": "survival",
+          "input_type": "select",
+          "options": [
+            "survival",
+            "creative",
+            "adventure"
+          ]
+        },
+        {
+          "name": "Difficulté",
+          "env_variable": "DIFFICULTY",
+          "description": "Difficulté du monde Bedrock",
+          "default_value": "normal",
+          "input_type": "select",
+          "options": [
+            "peaceful",
+            "easy",
+            "normal",
+            "hard"
+          ]
+        }
+      ],
+      "is_custom": false
+    },
+    {
+      "id": "minecraft-java",
+      "name": "Minecraft: Java Edition",
+      "author": "PaperMC & STEvE_OS",
+      "category": "Bac à sable / Survie",
+      "icon": "⛏️",
+      "tagline": "Serveur Minecraft Java haute performance propulsé par PaperMC 1.21+",
+      "description": "Serveur dédié Java haute performance supportant les plugins Spigot/Paper, l'optimisation moderne du ramasse-miettes (G1GC), le téléchargement automatique des versions et l'EULA pré-validée.",
+      "icon_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/minecraft-java/icon.png",
+      "banner_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/minecraft-java/banner.png",
+      "steam_app_id": null,
+      "docker_image": "ghcr.io/pterodactyl/yolks:java_21",
+      "default_port": 25565,
+      "port_protocol": "both",
+      "extra_ports": [],
+      "default_memory_mb": 4096,
+      "min_memory_mb": 2048,
+      "startup_cmd": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -XX:+UseG1GC -jar server.jar nogui",
+      "variables": [
+        {
+          "name": "Version Minecraft",
+          "env_variable": "MINECRAFT_VERSION",
+          "description": "Version de PaperMC / Minecraft à déployer",
+          "default_value": "1.21.1",
+          "input_type": "text",
+          "options": null
+        },
+        {
+          "name": "Moteur / Loader",
+          "env_variable": "LOADER",
+          "description": "Type de serveur Minecraft",
+          "default_value": "paper",
+          "input_type": "select",
+          "options": [
+            "paper",
+            "purpur",
+            "fabric",
+            "vanilla"
+          ]
+        },
+        {
+          "name": "Message du jour (MOTD)",
+          "env_variable": "MOTD",
+          "description": "Description affichée dans la liste des serveurs",
+          "default_value": "Serveur Minecraft propulsé par STEvE_OS NAS",
+          "input_type": "text",
+          "options": null
+        },
+        {
+          "name": "Joueurs Maximum",
+          "env_variable": "MAX_PLAYERS",
+          "description": "Slots simultanés autorisés",
+          "default_value": "20",
+          "input_type": "number",
+          "options": null
+        },
+        {
+          "name": "Difficulté",
+          "env_variable": "DIFFICULTY",
+          "description": "Difficulté du monde Minecraft",
+          "default_value": "normal",
+          "input_type": "select",
+          "options": [
+            "peaceful",
+            "easy",
+            "normal",
+            "hard"
+          ]
+        },
+        {
+          "name": "Mode en ligne (Authentification Mojang)",
+          "env_variable": "ONLINE_MODE",
+          "description": "Vérifier les comptes Minecraft officiels (false autorise les versions non vérifiées)",
+          "default_value": "true",
+          "input_type": "boolean",
+          "options": null
+        }
+      ],
+      "is_custom": false
+    },
+    {
+      "id": "palworld",
+      "name": "Palworld Dedicated Server",
+      "author": "Pocketpair & SteamCMD",
+      "category": "Aventure / Survie",
+      "icon": "🐾",
+      "tagline": "Serveur multijoueur Palworld avec multithreading et persistance",
+      "description": "Serveur dédié officiel Palworld via SteamCMD avec optimisation multithread, gestion de sauvegarde automatique, allocation mémoire dynamique et support jusqu'à 32 joueurs.",
+      "icon_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/palworld/icon.png",
+      "banner_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/palworld/banner.jpg",
+      "steam_app_id": "2394010",
+      "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+      "default_port": 8211,
+      "port_protocol": "udp",
+      "extra_ports": [],
+      "default_memory_mb": 8192,
+      "min_memory_mb": 4096,
+      "startup_cmd": "./PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS -port={{SERVER_PORT}} -players={{MAX_PLAYERS}}",
+      "variables": [
+        {
+          "name": "Nom du serveur Palworld",
+          "env_variable": "SERVER_NAME",
+          "description": "Nom affiché dans la liste des serveurs de jeu",
+          "default_value": "Serveur Palworld STEvE_OS",
+          "input_type": "text",
+          "options": null
+        },
+        {
+          "name": "Mot de passe d'accès (Optionnel)",
+          "env_variable": "SERVER_PASSWORD",
+          "description": "Mot de passe requis pour rejoindre (laisser vide si public)",
+          "default_value": "",
+          "input_type": "password",
+          "options": null
+        },
+        {
+          "name": "Mot de passe Administrateur",
+          "env_variable": "ADMIN_PASSWORD",
+          "description": "Mot de passe pour les commandes d'administration (/AdminPassword)",
+          "default_value": "SteveAdminPass123!",
+          "input_type": "password",
+          "options": null
+        },
+        {
+          "name": "Joueurs Maximum",
+          "env_variable": "MAX_PLAYERS",
+          "description": "Nombre maximum de joueurs simultanés",
+          "default_value": "32",
           "input_type": "number",
           "options": null
         }
@@ -521,6 +638,58 @@
           "description": "Slots simultanés autorisés",
           "default_value": "16",
           "input_type": "number",
+          "options": null
+        }
+      ],
+      "is_custom": false
+    },
+    {
+      "id": "valheim",
+      "name": "Valheim Dedicated Server",
+      "author": "Iron Gate & SteamCMD",
+      "category": "Survie Mythologique",
+      "icon": "⚔️",
+      "tagline": "Serveur dédié viking persistant dans un monde procédural nordique",
+      "description": "Serveur dédié Valheim viking multijoueur persistant avec téléchargement automatique des mises à jour Steam, génération de monde procédural et persistance des sauvegardes.",
+      "icon_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/valheim/icon.png",
+      "banner_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/valheim/banner.jpg",
+      "steam_app_id": "896660",
+      "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+      "default_port": 2456,
+      "port_protocol": "udp",
+      "extra_ports": [
+        {
+          "port": 2457,
+          "protocol": "udp",
+          "description": "Port de requête Steam Query"
+        }
+      ],
+      "default_memory_mb": 4096,
+      "min_memory_mb": 2048,
+      "startup_cmd": "./valheim_server.x86_64 -name \"{{SERVER_NAME}}\" -port {{SERVER_PORT}} -world \"{{WORLD_NAME}}\" -password \"{{SERVER_PASSWORD}}\" -public 1",
+      "variables": [
+        {
+          "name": "Nom du serveur",
+          "env_variable": "SERVER_NAME",
+          "description": "Nom de votre serveur Valheim",
+          "default_value": "Valheim STEvE_OS World",
+          "input_type": "text",
+          "options": null
+        },
+        {
+          "name": "Nom du monde",
+          "env_variable": "WORLD_NAME",
+          "description": "Nom du fichier de sauvegarde du monde",
+          "default_value": "Dedicated",
+          "input_type": "text",
+          "options": null
+        },
+        {
+          "name": "Mot de passe (Min 5 car.)",
+          "env_variable": "SERVER_PASSWORD",
+          "description": "Obligatoire par Valheim (minimum 5 caractères)",
+          "default_value": "Valheim123",
+          "input_type": "password",
           "options": null
         }
       ],

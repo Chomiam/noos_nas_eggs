@@ -1,0 +1,109 @@
+{
+  "id": "counter-strike-2",
+  "name": "Counter-Strike 2 Dedicated Server",
+  "author": "Valve Corporation & SteamCMD",
+  "category": "FPS Compétitif",
+  "icon": "🎯",
+  "tagline": "Le summum du tir tactique et compétitif par Valve",
+  "description": "Serveur dédié officiel Counter-Strike 2 (CS2) propulsé par le moteur Source 2 et SteamCMD sous Linux 64-bit natif, tickrate adaptatif subtick, gestion des tokens GSLT et configuration compétitive/casual.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/counter-strike-2/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/counter-strike-2/banner.jpg",
+  "steam_app_id": "730",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:sniper",
+  "default_port": 27015,
+  "port_protocol": "both",
+  "extra_ports": [
+    {
+      "port": 27020,
+      "protocol": "udp",
+      "description": "Port SourceTV / GOTV"
+    }
+  ],
+  "default_memory_mb": 4096,
+  "min_memory_mb": 2048,
+  "startup_cmd": "./game/bin/linuxsteamrt64/cs2 -dedicated -ip 0.0.0.0 -port {{SERVER_PORT}} -tv_port 27020 -maxplayers {{MAX_PLAYERS}} +game_mode {{GAME_MODE}} +game_type {{GAME_TYPE}} +map {{SRCDS_MAP}} +hostname \"{{SERVER_NAME}}\" +sv_password \"{{SERVER_PASSWORD}}\" +rcon_password \"{{RCON_PASSWORD}}\" +sv_setsteamaccount {{STEAM_GSLT}}",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom affiché dans la liste des serveurs communautaires CS2",
+      "default_value": "Serveur CS2 STEvE_OS",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Carte de départ (Map)",
+      "env_variable": "SRCDS_MAP",
+      "description": "Carte initiale chargée au démarrage",
+      "default_value": "de_dust2",
+      "input_type": "select",
+      "options": [
+        "de_dust2",
+        "de_mirage",
+        "de_inferno",
+        "de_nuke",
+        "de_anubis",
+        "de_ancient",
+        "de_vertigo",
+        "cs_office",
+        "cs_italy"
+      ]
+    },
+    {
+      "name": "Nombre maximum de joueurs",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Nombre de slots joueurs autorisés",
+      "default_value": "10",
+      "input_type": "number",
+      "options": null
+    },
+    {
+      "name": "Token GSLT Steam",
+      "env_variable": "STEAM_GSLT",
+      "description": "Jeton GSLT (Game Server Login Token) requis par Valve pour la liste publique",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Mot de passe Joueurs (Optionnel)",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Mot de passe requis pour se connecter (vide pour public)",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Mot de passe RCON",
+      "env_variable": "RCON_PASSWORD",
+      "description": "Mot de passe de télé-administration RCON console",
+      "default_value": "SteveRconAdmin123!",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Type de jeu (Game Type)",
+      "env_variable": "GAME_TYPE",
+      "description": "Type de jeu (0=Classique, 1=Occasionnel/Gungame)",
+      "default_value": "0",
+      "input_type": "select",
+      "options": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "name": "Mode de jeu (Game Mode)",
+      "env_variable": "GAME_MODE",
+      "description": "Mode de jeu (0=Casual, 1=Compétitif, 2=Course à l'armement)",
+      "default_value": "1",
+      "input_type": "select",
+      "options": [
+        "0",
+        "1",
+        "2"
+      ]
+    }
+  ],
+  "is_custom": false
+}

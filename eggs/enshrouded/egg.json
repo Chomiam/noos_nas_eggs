@@ -1,0 +1,60 @@
+{
+  "id": "enshrouded",
+  "name": "Enshrouded Dedicated Server",
+  "author": "Keen Games & SteamCMD",
+  "category": "Survie / Action RPG",
+  "icon": "⚔️",
+  "tagline": "Explorez le royaume déchu d'Embervale dans ce RPG de survie voxel",
+  "description": "Serveur dédié officiel Enshrouded via SteamCMD avec génération de monde persistant d'Embervale, physique de construction voxel avancée, progression coopérative jusqu'à 16 joueurs et combat d'action RPG.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/enshrouded/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/eggs/enshrouded/banner.jpg",
+  "steam_app_id": "2278520",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 15636,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 15637,
+      "protocol": "udp",
+      "description": "Port de requête Steam Query"
+    }
+  ],
+  "default_memory_mb": 8192,
+  "min_memory_mb": 6144,
+  "startup_cmd": "rm -f ./logs/enshrouded_server.log; proton run ./enshrouded_server.exe & ENS_PID=$! ; tail -c0 -F ./logs/enshrouded_server.log --pid=$ENS_PID",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom affiché dans la liste des serveurs Enshrouded",
+      "default_value": "Serveur Enshrouded STEvE_OS",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mot de passe Joueurs (Optionnel)",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Mot de passe requis pour rejoindre le monde (laisser vide si public)",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Nombre maximum de joueurs",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Nombre maximum de joueurs simultanés dans Embervale",
+      "default_value": "16",
+      "input_type": "number",
+      "options": null
+    },
+    {
+      "name": "Dossier de sauvegarde",
+      "env_variable": "SAVE_DIR",
+      "description": "Répertoire local de persistance du monde",
+      "default_value": "./savegame",
+      "input_type": "text",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

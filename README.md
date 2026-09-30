@@ -6,7 +6,7 @@ Chaque Egg de ce dépôt est autonome, testé sur NixOS/Docker, traduit en fran�
 
 ---
 
-## 🎮 Jeux Disponibles (8)
+## 🎮 Jeux Disponibles (10)
 
 | Jeu | Catégorie | Mémoire Recommandée | Ports Déclarés |
 | :--- | :--- | :--- | :--- |
@@ -18,6 +18,8 @@ Chaque Egg de ce dépôt est autonome, testé sur NixOS/Docker, traduit en fran�
 | **Project Zomboid Dedicated Server** | Survie Zombie Hardcore | 4096 Mo | `16261/udp + 16262/udp` |
 | **Rust Dedicated Server** | Survie PvP / Sandbox | 8192 Mo | `28015/udp + 28016/tcp` |
 | **Terraria Dedicated Server** | Aventure / Sandbox 2D | 2048 Mo | `7777/both` |
+| **Enshrouded Dedicated Server** | Survie / Action RPG | 8192 Mo | `15636/udp + 15637/udp` |
+| **Counter-Strike 2 Dedicated Server** | FPS Compétitif | 4096 Mo | `27015/both + 27020/udp` |
 
 ---
 
