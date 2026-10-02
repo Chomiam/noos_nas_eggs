@@ -1,6 +1,6 @@
-# 🥚 STEvE_OS Game Eggs Hub (`steve_nas_eggs`)
+# 🥚 Noos Game Eggs Hub (`noos_nas_eggs`)
 
-Catalogue officiel et certifié d'Eggs de serveurs de jeu conteneurisés pour **STEvE_OS NAS**.
+Catalogue officiel et certifié d'Eggs de serveurs de jeu conteneurisés pour **Noos NAS**.
 
 Chaque Egg de ce dépôt est autonome, testé sur NixOS/Docker, traduit en français avec ports déclarés, icônes officielles HD et bannières panoramiques.
 
@@ -23,9 +23,9 @@ Chaque Egg de ce dépôt est autonome, testé sur NixOS/Docker, traduit en fran�
 
 ---
 
-## 📡 Utilisation dans STEvE_OS
+## 📡 Utilisation dans Noos
 
-Le Dashboard STEvE_OS synchronise automatiquement ce catalogue en interrogeant :
+Le Dashboard Noos synchronise automatiquement ce catalogue en interrogeant :
 ```
-https://raw.githubusercontent.com/Chomiam/steve_nas_eggs/main/catalog.json
+https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/catalog.json
 ```
