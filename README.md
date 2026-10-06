@@ -11,6 +11,7 @@
   [![Performance](https://img.shields.io/badge/Performance-NVMe%20%26%20Multi--C%C5%93urs%20Natif-red?style=for-the-badge&logo=speedtest&logoColor=white)](#)
   [![Isolation](https://img.shields.io/badge/Isolation-Conteneurs%20Docker%20%C3%89tanches-teal?style=for-the-badge&logo=docker&logoColor=white)](#)
   [![Language](https://img.shields.io/badge/Interface-100%25%20Fran%C3%A7ais-purple?style=for-the-badge)](#)
+  [![License](https://img.shields.io/badge/Licence-GNU%20GPLv3-blue?style=for-the-badge)](LICENSE)
 
   <p align="center">
     <strong>Reprenez le contrôle de vos parties multijoueurs. Hébergez vos mondes privés directement sur votre propre serveur de stockage, sans abonnement, sans bridage de slots et sans intermédiaire.</strong>
@@ -200,6 +201,13 @@ La communauté Noos NAS s'enrichit chaque jour de nouveaux serveurs de jeu :
 3. Ajoutez votre définition `egg.json`, une icône `icon.png` et une bannière 1920×620 `banner.jpg`.
 4. Testez le démarrage de votre conteneur avec le banc de test `python3 scripts/test_eggs.py`.
 5. Proposez une **Pull Request** pour que tous les utilisateurs de Noos NAS puissent en bénéficier !
+
+---
+
+## 📄 Licence
+
+Ce projet est distribué sous licence libre et copyleft **GNU General Public License v3.0 (GPLv3)**.  
+Consultez le fichier [LICENSE](LICENSE) pour plus d'informations.
 
 ---
 
