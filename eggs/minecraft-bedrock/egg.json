@@ -1,7 +1,7 @@
 {
   "id": "minecraft-bedrock",
   "name": "Minecraft: Bedrock Edition",
-  "author": "Mojang & STEvE_OS",
+  "author": "Mojang & Noos NAS",
   "category": "Bac à sable / Survie",
   "icon": "🧱",
   "tagline": "Serveur officiel Mojang BDS pour consoles, smartphones et Windows 10/11",
@@ -21,7 +21,7 @@
       "name": "Nom du serveur",
       "env_variable": "SERVER_NAME",
       "description": "Nom affiché aux joueurs Bedrock",
-      "default_value": "STEvE_OS Bedrock World",
+      "default_value": "Noos NAS Bedrock World",
       "input_type": "text",
       "options": null
     },

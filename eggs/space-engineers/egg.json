@@ -1,0 +1,38 @@
+{
+  "id": "space-engineers",
+  "name": "Space Engineers Dedicated Server",
+  "author": "Keen Software House & Noos NAS",
+  "category": "Simulation Spatiale",
+  "icon": "🚀",
+  "tagline": "Construisez des vaisseaux, stations spatiales et avant-postes planétaires réalistes",
+  "description": "Serveur dédié multijoueur Space Engineers propulsé par Proton. Physique réaliste des corps rigides, destruction volumétrique, saut hyperspatial et survie orbitale avec vos amis.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/space-engineers/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/space-engineers/banner.jpg",
+  "steam_app_id": "298740",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 27016,
+  "port_protocol": "udp",
+  "extra_ports": [],
+  "default_memory_mb": 12288,
+  "min_memory_mb": 6144,
+  "startup_cmd": "wine DedicatedServer64/SpaceEngineersDedicated.exe -console -ignorelastsession",
+  "variables": [
+    {
+      "name": "Nom du serveur spatial",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom affiché dans le navigateur de serveurs",
+      "default_value": "Space Engineers Noos NAS Station",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Nombre maximum d'ingénieurs",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Joueurs max",
+      "default_value": "16",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

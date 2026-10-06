@@ -1,0 +1,48 @@
+{
+  "id": "dont-starve-together",
+  "name": "Don't Starve Together Dedicated Server",
+  "author": "Klei Entertainment & Noos NAS",
+  "category": "Survie / Aventure",
+  "icon": "🏕️",
+  "tagline": "Explorez et survivez ensemble dans un univers hostile façonné à la main",
+  "description": "Serveur dédié officiel Don't Starve Together avec prise en charge du clustering (Surface + Grottes simultanées), mods du Steam Workshop et saisons impitoyables.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/dont-starve-together/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/dont-starve-together/banner.jpg",
+  "steam_app_id": "343050",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 10999,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 11000,
+      "protocol": "udp",
+      "description": "Port de communication Cluster/Caves"
+    }
+  ],
+  "default_memory_mb": 4096,
+  "min_memory_mb": 2048,
+  "startup_cmd": "./dontstarve_dedicated_server_nullrenderer -console -cluster MyDediServer -shard Master",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom du monde DST",
+      "default_value": "Don't Starve Noos NAS",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mode de jeu",
+      "env_variable": "GAME_MODE",
+      "description": "Mode de survie",
+      "default_value": "survival",
+      "input_type": "select",
+      "options": [
+        "survival",
+        "endless",
+        "wilderness"
+      ]
+    }
+  ],
+  "is_custom": false
+}

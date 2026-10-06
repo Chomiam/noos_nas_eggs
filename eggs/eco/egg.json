@@ -1,0 +1,36 @@
+{
+  "id": "eco",
+  "name": "Eco Dedicated Server",
+  "author": "Strange Loop Games & Noos NAS",
+  "category": "Écologie & Civilisation",
+  "icon": "🌱",
+  "tagline": "Bâtissez une civilisation florissante pour détruire un météore sans ruiner l'écosystème",
+  "description": "Serveur dédié officiel Eco Linux natif. Simulez une économie complète avec monnaie, lois démocratiques, pollution environnementale en temps réel et recherche technologique de pointe.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/eco/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/eco/banner.jpg",
+  "steam_app_id": "739590",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 3000,
+  "port_protocol": "both",
+  "extra_ports": [
+    {
+      "port": 3001,
+      "protocol": "both",
+      "description": "Port Web d'administration et d'écologie"
+    }
+  ],
+  "default_memory_mb": 8192,
+  "min_memory_mb": 4096,
+  "startup_cmd": "./EcoServer -nogui",
+  "variables": [
+    {
+      "name": "Nom du monde Eco",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom de la planète",
+      "default_value": "Eco Noos NAS Planet",
+      "input_type": "text",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

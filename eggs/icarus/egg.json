@@ -1,0 +1,44 @@
+{
+  "id": "icarus",
+  "name": "Icarus Dedicated Server",
+  "author": "RocketWerkz & Noos NAS",
+  "category": "Survie Sci-Fi",
+  "icon": "🪐",
+  "tagline": "Survivez sur une planète terraformée hostile lors de missions chronométrées",
+  "description": "Serveur dédié multijoueur Icarus sous Proton. Descendez en capsule orbitale sur une planète sauvage toxique, récoltez des matières exotiques et extrayez-vous avant la tempête.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/icarus/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/icarus/banner.jpg",
+  "steam_app_id": "2089300",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 17777,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 27015,
+      "protocol": "udp",
+      "description": "Port Steam Query"
+    }
+  ],
+  "default_memory_mb": 12288,
+  "min_memory_mb": 6144,
+  "startup_cmd": "wine IcarusServer.exe -Port={{SERVER_PORT}} -QueryPort={{QUERY_PORT}} -Log",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom de la mission Icarus",
+      "default_value": "Icarus Noos NAS Expedition",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Port Query Steam",
+      "env_variable": "QUERY_PORT",
+      "description": "Port Query",
+      "default_value": "27015",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

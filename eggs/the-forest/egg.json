@@ -1,0 +1,49 @@
+{
+  "id": "the-forest",
+  "name": "The Forest Dedicated Server",
+  "author": "Endnight Games & Noos NAS",
+  "category": "Horreur / Survie",
+  "icon": "🌲",
+  "tagline": "Construisez, explorez et survivez dans une forêt infestée de cannibales",
+  "description": "Serveur dédié officiel pour The Forest. Après le crash de votre avion, coupez des arbres, bâtissez un camp fortifié et défendez-vous contre les cannibales de la péninsule.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/the-forest/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/the-forest/banner.jpg",
+  "steam_app_id": "556450",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 27016,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 8766,
+      "protocol": "udp",
+      "description": "Port communication"
+    },
+    {
+      "port": 27015,
+      "protocol": "udp",
+      "description": "Port Steam Query"
+    }
+  ],
+  "default_memory_mb": 6144,
+  "min_memory_mb": 3072,
+  "startup_cmd": "wine TheForestDedicatedServer.exe -batchmode -nographics -savefolderpath \"Saves\"",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom du serveur",
+      "default_value": "The Forest Noos NAS",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Capacité maximale",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Nombre max de survivants",
+      "default_value": "8",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

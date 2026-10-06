@@ -1,0 +1,52 @@
+{
+  "id": "soulmask",
+  "name": "Soulmask Dedicated Server",
+  "author": "CampFire Studio & Noos NAS",
+  "category": "Survie / Tribale",
+  "icon": "🎭",
+  "tagline": "Échappez au rituel sacrificiel et découvrez les secrets des masques ancestraux",
+  "description": "Serveur dédié officiel Soulmask propulsé par Proton. Fondez une tribu, recrutez des guerriers indigènes avec des compétences spécialisées et maîtrisez la puissance des masques antiques.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/soulmask/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/soulmask/banner.jpg",
+  "steam_app_id": "3017310",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 8777,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 27015,
+      "protocol": "udp",
+      "description": "Port de requête Steam Query"
+    }
+  ],
+  "default_memory_mb": 8192,
+  "min_memory_mb": 4096,
+  "startup_cmd": "wine WSServer.exe -Port={{SERVER_PORT}} -QueryPort={{QUERY_PORT}} -EchoPort=18888 -log",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom affiché",
+      "default_value": "Soulmask Noos NAS Tribe",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Port Query Steam",
+      "env_variable": "QUERY_PORT",
+      "description": "Port Steam",
+      "default_value": "27015",
+      "input_type": "number",
+      "options": null
+    },
+    {
+      "name": "Mot de passe joueur",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Mot de passe serveur",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

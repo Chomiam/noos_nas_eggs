@@ -1,0 +1,49 @@
+{
+  "id": "conan-exiles",
+  "name": "Conan Exiles Dedicated Server",
+  "author": "Funcom & Noos NAS",
+  "category": "Survie / Barbares",
+  "icon": "⚔️",
+  "tagline": "Survivez, bâtissez et dominez dans les Terres Exilées impitoyables de Conan",
+  "description": "Serveur dédié multijoueur persistant Conan Exiles avec gestion des purges, esclaves, donjons, dieux colossaux et batailles sanglantes en monde ouvert.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/conan-exiles/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/conan-exiles/banner.jpg",
+  "steam_app_id": "443030",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 7777,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 7778,
+      "protocol": "udp",
+      "description": "Port de jeu secondaire"
+    },
+    {
+      "port": 27015,
+      "protocol": "udp",
+      "description": "Port Steam Query"
+    }
+  ],
+  "default_memory_mb": 8192,
+  "min_memory_mb": 4096,
+  "startup_cmd": "wine ConanSandboxServer.exe -Port={{SERVER_PORT}} -QueryPort={{QUERY_PORT}} -log",
+  "variables": [
+    {
+      "name": "Port Query Steam",
+      "env_variable": "QUERY_PORT",
+      "description": "Port de requête",
+      "default_value": "27015",
+      "input_type": "number",
+      "options": null
+    },
+    {
+      "name": "Nombre maximum de joueurs",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Capacité max",
+      "default_value": "40",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

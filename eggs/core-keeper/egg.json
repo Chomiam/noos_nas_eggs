@@ -1,0 +1,38 @@
+{
+  "id": "core-keeper",
+  "name": "Core Keeper Dedicated Server",
+  "author": "Pugstorm & Noos NAS",
+  "category": "Aventure / Sandbox 2D",
+  "icon": "💎",
+  "tagline": "Explorez une caverne sans fin de reliques, de créatures et de ressources en coop",
+  "description": "Serveur dédié officiel Core Keeper pour explorer des cavernes procédurales souterraines, miner des minerais rares, terrasser des boss géants et bâtir une base souterraine florissante.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/core-keeper/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/core-keeper/banner.jpg",
+  "steam_app_id": "1963720",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 27015,
+  "port_protocol": "udp",
+  "extra_ports": [],
+  "default_memory_mb": 4096,
+  "min_memory_mb": 2048,
+  "startup_cmd": "./_launch.sh -world 0 -port {{SERVER_PORT}}",
+  "variables": [
+    {
+      "name": "Nom du monde",
+      "env_variable": "WORLD_NAME",
+      "description": "Nom de la sauvegarde",
+      "default_value": "NoosWorld",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Nombre max de joueurs",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Joueurs max",
+      "default_value": "8",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

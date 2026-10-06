@@ -1,0 +1,44 @@
+{
+  "id": "myth-of-empires",
+  "name": "Myth of Empires Dedicated Server",
+  "author": "Angela Game & Noos NAS",
+  "category": "Sandbox Multijoueur Médiéval",
+  "icon": "🏯",
+  "tagline": "Bâtissez un empire oriental féodal, recrutez des armées et menez des sièges colossaux",
+  "description": "Serveur dédié officiel Myth of Empires propulsé par Proton. Bâtissez des forteresses asiatiques monumentales, dressez des étalons de guerre, fabriquez des engins de siège et unifiez les contrées déchirées.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/myth-of-empires/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/myth-of-empires/banner.jpg",
+  "steam_app_id": "1794810",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 7777,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 27015,
+      "protocol": "udp",
+      "description": "Port Steam Query"
+    }
+  ],
+  "default_memory_mb": 12288,
+  "min_memory_mb": 6144,
+  "startup_cmd": "wine MOEServer.exe -Port={{SERVER_PORT}} -QueryPort={{QUERY_PORT}} -log",
+  "variables": [
+    {
+      "name": "Nom de l'empire",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom du serveur",
+      "default_value": "Myth of Empires Noos NAS Kingdom",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Port Query",
+      "env_variable": "QUERY_PORT",
+      "description": "Port Query Steam",
+      "default_value": "27015",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

@@ -1,0 +1,30 @@
+{
+  "id": "stormworks",
+  "name": "Stormworks: Build and Rescue Dedicated Server",
+  "author": "Geometa & Noos NAS",
+  "category": "Sauvetage / Véhicules",
+  "icon": "🚁",
+  "tagline": "Concevez hélicoptères, bateaux et sous-marins pour des missions de sauvetage héroïques",
+  "description": "Serveur dédié Stormworks sous Proton. Concevez vos véhicules personnalisés de sauvetage maritime et aérien avec logique modulaire, moteurs thermiques réalistes et pilotez dans les tempêtes violentes.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/stormworks/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/stormworks/banner.jpg",
+  "steam_app_id": "1247090",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 25564,
+  "port_protocol": "both",
+  "extra_ports": [],
+  "default_memory_mb": 6144,
+  "min_memory_mb": 3072,
+  "startup_cmd": "wine server64.exe +server_dir \"server-data\"",
+  "variables": [
+    {
+      "name": "Nom du serveur de sauvetage",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom affiché",
+      "default_value": "Stormworks Noos NAS Coastguard",
+      "input_type": "text",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

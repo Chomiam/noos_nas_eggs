@@ -1,0 +1,62 @@
+{
+  "id": "arma-3",
+  "name": "Arma 3 Dedicated Server",
+  "author": "Bohemia Interactive & Noos NAS",
+  "category": "Simulation Militaire",
+  "icon": "🪖",
+  "tagline": "Simulation de combat militaire réaliste et tactique en monde ouvert gigantesque",
+  "description": "Serveur dédié officiel Arma 3 Linux pour opérations militaires réalistes à grande échelle. Compatible avec Altis Life, Wasteland, Antistasi, Zeus et les mods communautaires ACE3 / TFAR.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/arma-3/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/arma-3/banner.jpg",
+  "steam_app_id": "233780",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 2302,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 2303,
+      "protocol": "udp",
+      "description": "Port de requête Steam Query"
+    },
+    {
+      "port": 2304,
+      "protocol": "udp",
+      "description": "Port Steam"
+    },
+    {
+      "port": 2305,
+      "protocol": "udp",
+      "description": "Port VoN (Voix)"
+    }
+  ],
+  "default_memory_mb": 8192,
+  "min_memory_mb": 4096,
+  "startup_cmd": "./arma3server -port={{SERVER_PORT}} -config=server.cfg -world=empty",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom du serveur militaire",
+      "default_value": "Arma 3 Noos NAS Battalion",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mot de passe administrateur",
+      "env_variable": "ADMIN_PASSWORD",
+      "description": "Mot de passe commande #login",
+      "default_value": "NoosArmaAdmin123!",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Nombre max de soldats",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Capacité joueurs",
+      "default_value": "32",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

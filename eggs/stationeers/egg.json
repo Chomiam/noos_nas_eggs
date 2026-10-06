@@ -1,0 +1,50 @@
+{
+  "id": "stationeers",
+  "name": "Stationeers Dedicated Server",
+  "author": "RocketWerkz & Noos NAS",
+  "category": "Ingénierie Spatiale",
+  "icon": "🛰️",
+  "tagline": "Gérez la pression, l'atmosphère et les circuits d'une station spatiale complexe",
+  "description": "Serveur dédié officiel Stationeers Linux natif. Simulation détaillée de thermodynamique des gaz, réseau électrique, plomberie industrielle, logique programmable et survie sur la Lune ou Mars.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/stationeers/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/stationeers/banner.jpg",
+  "steam_app_id": "600760",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 27016,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 27015,
+      "protocol": "udp",
+      "description": "Port Steam Query"
+    }
+  ],
+  "default_memory_mb": 6144,
+  "min_memory_mb": 3072,
+  "startup_cmd": "./rocketstation_DedicatedServer.x86_64 -batchmode -nographics -load",
+  "variables": [
+    {
+      "name": "Nom de la station",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom affiché",
+      "default_value": "Stationeers Noos NAS Outpost",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Planète / Monde",
+      "env_variable": "WORLD_TYPE",
+      "description": "Environnement",
+      "default_value": "Moon",
+      "input_type": "select",
+      "options": [
+        "Moon",
+        "Mars",
+        "Europa",
+        "Mimas",
+        "Vulcan"
+      ]
+    }
+  ],
+  "is_custom": false
+}

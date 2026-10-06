@@ -1,7 +1,7 @@
 {
   "id": "terraria",
   "name": "Terraria Dedicated Server",
-  "author": "Re-Logic & STEvE_OS",
+  "author": "Re-Logic & Noos NAS",
   "category": "Aventure / Sandbox 2D",
   "icon": "🌳",
   "tagline": "Exploration, construction et combats de boss en 2D multijoueur",
@@ -21,7 +21,7 @@
       "name": "Nom du monde",
       "env_variable": "WORLD_NAME",
       "description": "Nom du fichier de monde Terraria",
-      "default_value": "SteveWorld",
+      "default_value": "NoosWorld",
       "input_type": "text",
       "options": null
     },

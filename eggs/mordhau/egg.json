@@ -1,0 +1,57 @@
+{
+  "id": "mordhau",
+  "name": "Mordhau Dedicated Server",
+  "author": "Triternion & Noos NAS",
+  "category": "Combat Médiéval",
+  "icon": "⚔️",
+  "tagline": "Combats médiévaux sanglants et précis à la première personne à grande échelle",
+  "description": "Serveur dédié officiel pour Mordhau. Maîtrisez le système de combat directionnel au corps-à-corps, participez à des batailles médiévales intenses en Frontline et Invasion jusqu'à 64 joueurs.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/mordhau/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/mordhau/banner.jpg",
+  "steam_app_id": "887010",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 7777,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 27015,
+      "protocol": "udp",
+      "description": "Port Steam Query"
+    },
+    {
+      "port": 10000,
+      "protocol": "tcp",
+      "description": "Port RCON console"
+    }
+  ],
+  "default_memory_mb": 6144,
+  "min_memory_mb": 3072,
+  "startup_cmd": "./MordhauServer.sh -Port={{SERVER_PORT}} -QueryPort={{QUERY_PORT}} -RCONPort={{RCON_PORT}}",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom de l'arène",
+      "default_value": "Mordhau Noos NAS Duel & Battle",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Port Query Steam",
+      "env_variable": "QUERY_PORT",
+      "description": "Port Query",
+      "default_value": "27015",
+      "input_type": "number",
+      "options": null
+    },
+    {
+      "name": "Port RCON",
+      "env_variable": "RCON_PORT",
+      "description": "Port RCON",
+      "default_value": "10000",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

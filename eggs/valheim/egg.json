@@ -27,7 +27,7 @@
       "name": "Nom du serveur",
       "env_variable": "SERVER_NAME",
       "description": "Nom de votre serveur Valheim",
-      "default_value": "Valheim STEvE_OS World",
+      "default_value": "Valheim Noos NAS World",
       "input_type": "text",
       "options": null
     },

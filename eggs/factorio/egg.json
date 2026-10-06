@@ -1,0 +1,44 @@
+{
+  "id": "factorio",
+  "name": "Factorio Headless Server",
+  "author": "Wube Software & Noos NAS",
+  "category": "Automatisation / Gestion",
+  "icon": "⚙️",
+  "tagline": "Construisez et défendez des usines automatisées géantes sur une planète hostile",
+  "description": "Serveur dédié headless officiel haute performance pour Factorio. Automatisez chaînes d'assemblage, trains logistiques, raffinage de pétrole et défense contre les déchiqueteurs indigènes.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/factorio/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/factorio/banner.jpg",
+  "steam_app_id": null,
+  "docker_image": "factoriotools/factorio:stable",
+  "default_port": 34197,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 27015,
+      "protocol": "tcp",
+      "description": "Port RCON pour commandes console"
+    }
+  ],
+  "default_memory_mb": 4096,
+  "min_memory_mb": 2048,
+  "startup_cmd": "./bin/x64/factorio --start-server-load-latest --port {{SERVER_PORT}}",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom de votre usine",
+      "default_value": "Factorio Noos NAS Server",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mot de passe joueur (Optionnel)",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Mot de passe d'accès",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

@@ -27,7 +27,7 @@
       "name": "Nom du serveur",
       "env_variable": "SERVER_NAME",
       "description": "Nom du serveur Project Zomboid",
-      "default_value": "STEvE_OS Zomboid",
+      "default_value": "Noos NAS Zomboid",
       "input_type": "text",
       "options": null
     },
@@ -35,7 +35,7 @@
       "name": "Mot de passe Administrateur",
       "env_variable": "ADMIN_PASSWORD",
       "description": "Mot de passe du compte administrateur admin",
-      "default_value": "SteveAdminZomboid!",
+      "default_value": "NoosAdminZomboid!",
       "input_type": "password",
       "options": null
     },

@@ -1,7 +1,7 @@
 {
   "id": "minecraft-java",
   "name": "Minecraft: Java Edition",
-  "author": "PaperMC & STEvE_OS",
+  "author": "PaperMC & Noos NAS",
   "category": "Bac à sable / Survie",
   "icon": "⛏️",
   "tagline": "Serveur Minecraft Java haute performance propulsé par PaperMC 1.21+",
@@ -42,7 +42,7 @@
       "name": "Message du jour (MOTD)",
       "env_variable": "MOTD",
       "description": "Description affichée dans la liste des serveurs",
-      "default_value": "Serveur Minecraft propulsé par STEvE_OS NAS",
+      "default_value": "Serveur Minecraft propulsé par Noos NAS",
       "input_type": "text",
       "options": null
     },

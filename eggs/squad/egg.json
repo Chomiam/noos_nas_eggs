@@ -1,0 +1,57 @@
+{
+  "id": "squad",
+  "name": "Squad Dedicated Server",
+  "author": "Offworld Industries & Noos NAS",
+  "category": "FPS Tactique",
+  "icon": "🎯",
+  "tagline": "Combats tactiques par escouades combinées à grande échelle à 100 joueurs",
+  "description": "Serveur dédié officiel pour Squad. Coopération obligatoire, communication radio locale/escouade, blindés lourds, logistique de bases avancées et combats d'infanterie réalistes.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/squad/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/squad/banner.jpg",
+  "steam_app_id": "403240",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 7787,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 27165,
+      "protocol": "udp",
+      "description": "Port de requête Steam Query"
+    },
+    {
+      "port": 21114,
+      "protocol": "tcp",
+      "description": "Port de gestion RCON"
+    }
+  ],
+  "default_memory_mb": 8192,
+  "min_memory_mb": 4096,
+  "startup_cmd": "./SquadGameServer.sh Port={{SERVER_PORT}} QueryPort={{QUERY_PORT}} RCONPORT={{RCON_PORT}} -log",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom du serveur Squad",
+      "default_value": "Squad Noos NAS Community",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Port Query Steam",
+      "env_variable": "QUERY_PORT",
+      "description": "Port Query",
+      "default_value": "27165",
+      "input_type": "number",
+      "options": null
+    },
+    {
+      "name": "Port RCON",
+      "env_variable": "RCON_PORT",
+      "description": "Port RCON",
+      "default_value": "21114",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

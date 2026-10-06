@@ -1,0 +1,50 @@
+{
+  "id": "unturned",
+  "name": "Unturned Dedicated Server",
+  "author": "Smartly Dressed Games & Noos NAS",
+  "category": "Survie / Post-Apocalyptique",
+  "icon": "🧟",
+  "tagline": "Survie zombie voxel en monde ouvert avec artisanat, conduite et barricades",
+  "description": "Serveur dédié officiel Unturned avec support des cartes officielles (PEI, Washington, Russia), mods du Workshop, conduite de véhicules et combats JcJ/JcE.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/unturned/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/unturned/banner.jpg",
+  "steam_app_id": "1110100",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 27015,
+  "port_protocol": "both",
+  "extra_ports": [
+    {
+      "port": 27016,
+      "protocol": "udp",
+      "description": "Port Query Steam"
+    }
+  ],
+  "default_memory_mb": 4096,
+  "min_memory_mb": 2048,
+  "startup_cmd": "./ServerHelper.sh -batchmode -nographics +LanServer/{{SERVER_NAME}}",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom de l'instance serveur",
+      "default_value": "Unturned Noos Server",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Carte",
+      "env_variable": "MAP_NAME",
+      "description": "Carte du monde",
+      "default_value": "PEI",
+      "input_type": "select",
+      "options": [
+        "PEI",
+        "Washington",
+        "Russia",
+        "Yukon",
+        "Germany"
+      ]
+    }
+  ],
+  "is_custom": false
+}

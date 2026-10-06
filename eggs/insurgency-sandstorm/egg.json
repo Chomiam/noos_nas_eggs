@@ -1,0 +1,49 @@
+{
+  "id": "insurgency-sandstorm",
+  "name": "Insurgency: Sandstorm Dedicated Server",
+  "author": "New World Interactive & Noos NAS",
+  "category": "FPS Tactique",
+  "icon": "🎯",
+  "tagline": "FPS tactique hardcore en combats urbains au Moyen-Orient axé sur le jeu d'équipe",
+  "description": "Serveur dédié Linux natif pour Insurgency: Sandstorm. Balistique mortelle en un tir, gestion des munitions par chargeurs, frappes d'artillerie et coopération tactique contre l'IA ou d'autres joueurs.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/insurgency-sandstorm/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/insurgency-sandstorm/banner.jpg",
+  "steam_app_id": "581330",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 27102,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 27131,
+      "protocol": "udp",
+      "description": "Port de requête Steam Query"
+    },
+    {
+      "port": 27015,
+      "protocol": "tcp",
+      "description": "Port RCON"
+    }
+  ],
+  "default_memory_mb": 6144,
+  "min_memory_mb": 3072,
+  "startup_cmd": "./Insurgency/Binaries/Linux/InsurgencyServer-Linux-Shipping Oilfield?Scenario=Scenario_Oilfield_Push_Security -Port={{SERVER_PORT}} -QueryPort={{QUERY_PORT}} -RconPort={{RCON_PORT}} -log",
+  "variables": [
+    {
+      "name": "Port Query Steam",
+      "env_variable": "QUERY_PORT",
+      "description": "Port Query",
+      "default_value": "27131",
+      "input_type": "number",
+      "options": null
+    },
+    {
+      "name": "Port RCON",
+      "env_variable": "RCON_PORT",
+      "description": "Port RCON",
+      "default_value": "27015",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

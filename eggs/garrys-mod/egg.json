@@ -1,0 +1,57 @@
+{
+  "id": "garrys-mod",
+  "name": "Garry's Mod Dedicated Server",
+  "author": "Facepunch Studios & Noos NAS",
+  "category": "Bac à sable Source",
+  "icon": "🔧",
+  "tagline": "Sandbox physique multijoueur légendaire sous Source Engine (TTT, DarkRP)",
+  "description": "Serveur dédié SRCDS officiel pour Garry's Mod avec support complet du Steam Workshop, gamemodes communautaires (DarkRP, Trouble in Terrorist Town, Prop Hunt) et console FastDL.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/garrys-mod/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/garrys-mod/banner.jpg",
+  "steam_app_id": "4020",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 27015,
+  "port_protocol": "both",
+  "extra_ports": [
+    {
+      "port": 27005,
+      "protocol": "udp",
+      "description": "Port client Source Engine"
+    }
+  ],
+  "default_memory_mb": 4096,
+  "min_memory_mb": 2048,
+  "startup_cmd": "./srcds_run -game garrysmod -console -port {{SERVER_PORT}} +maxplayers {{MAX_PLAYERS}} +map {{SRCDS_MAP}} +gamemode {{GAMEMODE}}",
+  "variables": [
+    {
+      "name": "Nom de la carte de départ",
+      "env_variable": "SRCDS_MAP",
+      "description": "Carte initiale",
+      "default_value": "gm_construct",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mode de jeu (Gamemode)",
+      "env_variable": "GAMEMODE",
+      "description": "Mode de jeu",
+      "default_value": "sandbox",
+      "input_type": "select",
+      "options": [
+        "sandbox",
+        "terrortown",
+        "darkrp",
+        "prop_hunt"
+      ]
+    },
+    {
+      "name": "Nombre maximum de joueurs",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Joueurs max",
+      "default_value": "16",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

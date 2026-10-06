@@ -1,0 +1,38 @@
+{
+  "id": "counter-strike-source",
+  "name": "Counter-Strike: Source Dedicated Server",
+  "author": "Valve & Noos NAS",
+  "category": "FPS Compétitif",
+  "icon": "💣",
+  "tagline": "L'incontournable classique Source du combat terroristes contre antiterroristes",
+  "description": "Serveur dédié classique Counter-Strike: Source pour des parties intenses en De_Dust2, GunGame, Zombie Escape ou Deathmatch avec intégration SourceMod / MetaMod.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/counter-strike-source/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/counter-strike-source/banner.jpg",
+  "steam_app_id": "232330",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 27015,
+  "port_protocol": "both",
+  "extra_ports": [],
+  "default_memory_mb": 2048,
+  "min_memory_mb": 1024,
+  "startup_cmd": "./srcds_run -game cstrike -console -port {{SERVER_PORT}} +maxplayers {{MAX_PLAYERS}} +map {{SRCDS_MAP}}",
+  "variables": [
+    {
+      "name": "Carte de démarrage",
+      "env_variable": "SRCDS_MAP",
+      "description": "Carte initiale",
+      "default_value": "de_dust2",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Nombre maximum de joueurs",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Capacité max de joueurs",
+      "default_value": "20",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

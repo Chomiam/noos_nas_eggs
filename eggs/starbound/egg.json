@@ -1,0 +1,30 @@
+{
+  "id": "starbound",
+  "name": "Starbound Dedicated Server",
+  "author": "Chucklefish & Noos NAS",
+  "category": "Sandbox Spatial 2D",
+  "icon": "🌌",
+  "tagline": "Explorez un univers procédural infini à bord de votre propre vaisseau spatial",
+  "description": "Serveur dédié natif Linux pour Starbound. Visitez des milliers de planètes uniques, colonisez des mondes extraterrestres, affrontez des boss intergalactiques et échangez des artéfacts en multijoueur.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/starbound/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/starbound/banner.jpg",
+  "steam_app_id": "211820",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 21025,
+  "port_protocol": "tcp",
+  "extra_ports": [],
+  "default_memory_mb": 4096,
+  "min_memory_mb": 2048,
+  "startup_cmd": "./linux/starbound_server",
+  "variables": [
+    {
+      "name": "Capacité maximale de joueurs",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Nombre de passagers spatiaux",
+      "default_value": "8",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

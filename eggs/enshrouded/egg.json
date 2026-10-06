@@ -27,7 +27,7 @@
       "name": "Nom du serveur",
       "env_variable": "SERVER_NAME",
       "description": "Nom affiché dans la liste des serveurs Enshrouded",
-      "default_value": "Serveur Enshrouded STEvE_OS",
+      "default_value": "Serveur Enshrouded Noos NAS",
       "input_type": "text",
       "options": null
     },

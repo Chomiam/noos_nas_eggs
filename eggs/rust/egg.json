@@ -27,7 +27,7 @@
       "name": "Nom du serveur",
       "env_variable": "SERVER_NAME",
       "description": "Nom affiché dans le navigateur de serveurs Rust",
-      "default_value": "Serveur Rust STEvE_OS",
+      "default_value": "Serveur Rust Noos NAS",
       "input_type": "text",
       "options": null
     },
@@ -59,7 +59,7 @@
       "name": "Mot de passe RCON Web",
       "env_variable": "RCON_PASSWORD",
       "description": "Mot de passe pour console web RCON",
-      "default_value": "SteveRcon123!",
+      "default_value": "NoosRcon123!",
       "input_type": "password",
       "options": null
     }

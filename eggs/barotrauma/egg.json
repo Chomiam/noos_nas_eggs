@@ -1,0 +1,52 @@
+{
+  "id": "barotrauma",
+  "name": "Barotrauma Dedicated Server",
+  "author": "FakeFish & Undertow Games & Noos NAS",
+  "category": "Simulation / Sous-Marin",
+  "icon": "🐙",
+  "tagline": "Pilotez un sous-marin dans les profondeurs glaciales et hostiles d'Europe",
+  "description": "Serveur dédié Barotrauma. En tant que membre d'équipage (capitaine, mécanicien, médecin ou traître), naviguez dans les profondeurs sous-marines d'une lune de Jupiter face aux monstres et aux fuites d'eau.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/barotrauma/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/barotrauma/banner.jpg",
+  "steam_app_id": "1026340",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 27015,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 27016,
+      "protocol": "udp",
+      "description": "Port Steam Query"
+    }
+  ],
+  "default_memory_mb": 4096,
+  "min_memory_mb": 2048,
+  "startup_cmd": "./DedicatedServer -port {{SERVER_PORT}} -queryport {{QUERY_PORT}}",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom affiché dans le lobby",
+      "default_value": "Barotrauma Noos NAS Submarine",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Port Query Steam",
+      "env_variable": "QUERY_PORT",
+      "description": "Port de requête",
+      "default_value": "27016",
+      "input_type": "number",
+      "options": null
+    },
+    {
+      "name": "Capacité équipage",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Nombre max de marins",
+      "default_value": "16",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

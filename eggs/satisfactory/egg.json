@@ -1,0 +1,52 @@
+{
+  "id": "satisfactory",
+  "name": "Satisfactory Dedicated Server",
+  "author": "Coffee Stain Studios & Noos NAS",
+  "category": "Usine & Automatisation",
+  "icon": "🏭",
+  "tagline": "Construisez des usines colossales et automatisez la production sur une planète alien",
+  "description": "Serveur dédié multijoueur officiel Satisfactory pour automatiser la production d'usines complexes avec vos amis sur une planète extraterrestre, incluant mises à jour automatiques SteamCMD et sauvegarde continue.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/satisfactory/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/satisfactory/banner.jpg",
+  "steam_app_id": "1690800",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 7777,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 8888,
+      "protocol": "udp",
+      "description": "Port de messagerie fiable"
+    }
+  ],
+  "default_memory_mb": 8192,
+  "min_memory_mb": 4096,
+  "startup_cmd": "./Engine/Binaries/Linux/*-Linux-Shipping FactoryGame -Port={{SERVER_PORT}} -ReliablePort={{RELIABLE_PORT}}",
+  "variables": [
+    {
+      "name": "Port de messagerie fiable",
+      "env_variable": "RELIABLE_PORT",
+      "description": "Port UDP fiable",
+      "default_value": "8888",
+      "input_type": "number",
+      "options": null
+    },
+    {
+      "name": "Nombre de sauvegardes tournantes",
+      "env_variable": "NUM_AUTOSAVES",
+      "description": "Nombre de sauvegardes automatiques",
+      "default_value": "5",
+      "input_type": "number",
+      "options": null
+    },
+    {
+      "name": "Nombre maximum de joueurs",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Capacité max de joueurs",
+      "default_value": "8",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

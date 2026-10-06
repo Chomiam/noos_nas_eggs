@@ -1,0 +1,99 @@
+{
+  "id": "ark-survival-evolved",
+  "name": "ARK: Survival Evolved Dedicated Server",
+  "author": "Studio Wildcard & Noos NAS",
+  "category": "Survie / Dinosaures",
+  "icon": "🦖",
+  "tagline": "Domptez des dinosaures et survivez sur une île préhistorique mystérieuse",
+  "description": "Serveur dédié multijoueur complet pour ARK: Survival Evolved avec support des cartes personnalisées, gestion d'élevage, taming et console RCON intégrée.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/ark-survival-evolved/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/ark-survival-evolved/banner.jpg",
+  "steam_app_id": "376030",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 7777,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 7778,
+      "protocol": "udp",
+      "description": "Port Raw UDP de jeu secondaire"
+    },
+    {
+      "port": 27015,
+      "protocol": "udp",
+      "description": "Port de requête Steam Query"
+    },
+    {
+      "port": 27020,
+      "protocol": "tcp",
+      "description": "Port console RCON"
+    }
+  ],
+  "default_memory_mb": 12288,
+  "min_memory_mb": 6144,
+  "startup_cmd": "./ShooterGame/Binaries/Linux/ShooterGameServer {{SERVER_MAP}}?listen?SessionName=\"{{SERVER_NAME}}\"?ServerPassword=\"{{SERVER_PASSWORD}}\"?ServerAdminPassword=\"{{ADMIN_PASSWORD}}\"?Port={{SERVER_PORT}}?QueryPort={{QUERY_PORT}}?RCONPort={{RCON_PORT}} -server -log",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom affiché dans la liste des serveurs ARK",
+      "default_value": "Serveur ARK Noos NAS",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Carte du monde",
+      "env_variable": "SERVER_MAP",
+      "description": "Nom de la carte de jeu",
+      "default_value": "TheIsland",
+      "input_type": "select",
+      "options": [
+        "TheIsland",
+        "TheCenter",
+        "ScorchedEarth_P",
+        "Ragnarok",
+        "Aberration_P",
+        "Extinction",
+        "Valguero_P",
+        "Genesis",
+        "CrystalIsles",
+        "Gen2",
+        "LostIsland",
+        "Fjordur"
+      ]
+    },
+    {
+      "name": "Mot de passe joueur",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Mot de passe pour se connecter",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Mot de passe Administrateur",
+      "env_variable": "ADMIN_PASSWORD",
+      "description": "Mot de passe admin console",
+      "default_value": "NoosArkAdmin123!",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Port Steam Query",
+      "env_variable": "QUERY_PORT",
+      "description": "Port de requête Steam",
+      "default_value": "27015",
+      "input_type": "number",
+      "options": null
+    },
+    {
+      "name": "Port RCON",
+      "env_variable": "RCON_PORT",
+      "description": "Port de gestion RCON",
+      "default_value": "27020",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

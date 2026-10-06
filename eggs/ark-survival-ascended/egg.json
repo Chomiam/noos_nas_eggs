@@ -1,0 +1,86 @@
+{
+  "id": "ark-survival-ascended",
+  "name": "ARK: Survival Ascended Dedicated Server",
+  "author": "Studio Wildcard & Noos NAS",
+  "category": "Survie / Dinosaures",
+  "icon": "🦕",
+  "tagline": "L'expérience ARK réinventée sous Unreal Engine 5 avec rendu next-gen",
+  "description": "Serveur dédié officiel ARK: Survival Ascended sous Unreal Engine 5 propulsé par Proton avec gestion du cross-play et modding CurseForge intégré.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/ark-survival-ascended/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/ark-survival-ascended/banner.jpg",
+  "steam_app_id": "2430930",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 7777,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 27015,
+      "protocol": "udp",
+      "description": "Port Steam Query"
+    },
+    {
+      "port": 27020,
+      "protocol": "tcp",
+      "description": "Port RCON"
+    }
+  ],
+  "default_memory_mb": 16384,
+  "min_memory_mb": 10240,
+  "startup_cmd": "wine ArkAscendedServer.exe {{SERVER_MAP}}?listen?SessionName=\"{{SERVER_NAME}}\"?ServerPassword=\"{{SERVER_PASSWORD}}\"?ServerAdminPassword=\"{{ADMIN_PASSWORD}}\"?Port={{SERVER_PORT}}?QueryPort={{QUERY_PORT}}?RCONPort={{RCON_PORT}} -server -log",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom du serveur ASA",
+      "default_value": "Serveur ASA Noos NAS",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Carte du monde",
+      "env_variable": "SERVER_MAP",
+      "description": "Nom de la carte",
+      "default_value": "TheIsland_WP",
+      "input_type": "select",
+      "options": [
+        "TheIsland_WP",
+        "ScorchedEarth_WP",
+        "TheCenter_WP",
+        "Aberration_WP"
+      ]
+    },
+    {
+      "name": "Mot de passe joueur",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Mot de passe joueur",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Mot de passe Administrateur",
+      "env_variable": "ADMIN_PASSWORD",
+      "description": "Mot de passe admin",
+      "default_value": "NoosAsaAdmin123!",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Port Query",
+      "env_variable": "QUERY_PORT",
+      "description": "Port Steam Query",
+      "default_value": "27015",
+      "input_type": "number",
+      "options": null
+    },
+    {
+      "name": "Port RCON",
+      "env_variable": "RCON_PORT",
+      "description": "Port RCON",
+      "default_value": "27020",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

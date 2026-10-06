@@ -21,7 +21,7 @@
       "name": "Nom du serveur Palworld",
       "env_variable": "SERVER_NAME",
       "description": "Nom affiché dans la liste des serveurs de jeu",
-      "default_value": "Serveur Palworld STEvE_OS",
+      "default_value": "Serveur Palworld Noos NAS",
       "input_type": "text",
       "options": null
     },
@@ -37,7 +37,7 @@
       "name": "Mot de passe Administrateur",
       "env_variable": "ADMIN_PASSWORD",
       "description": "Mot de passe pour les commandes d'administration (/AdminPassword)",
-      "default_value": "SteveAdminPass123!",
+      "default_value": "NoosAdminPass123!",
       "input_type": "password",
       "options": null
     },

@@ -1,0 +1,49 @@
+{
+  "id": "sons-of-the-forest",
+  "name": "Sons of the Forest Dedicated Server",
+  "author": "Endnight Games & Noos NAS",
+  "category": "Horreur / Survie",
+  "icon": "🪓",
+  "tagline": "Survivez aux cannibales et mutants sur une île isolée cauchemardesque",
+  "description": "Serveur dédié officiel pour Sons of the Forest. Bâtissez des abris sophistiqués, explorez des grottes et survivez aux créatures mutantes en coop.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/sons-of-the-forest/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/sons-of-the-forest/banner.jpg",
+  "steam_app_id": "2465200",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 8766,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 27016,
+      "protocol": "udp",
+      "description": "Port Steam Query"
+    },
+    {
+      "port": 9700,
+      "protocol": "udp",
+      "description": "Port Blob"
+    }
+  ],
+  "default_memory_mb": 8192,
+  "min_memory_mb": 4096,
+  "startup_cmd": "wine SonsOfTheForestDS.exe -userdataPath \"C:/users/steam/AppData/LocalLow/Endnight/SonsOfTheForestDS\"",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom affiché aux joueurs",
+      "default_value": "Serveur Sons of the Forest Noos NAS",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Nombre de joueurs",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Joueurs max (1-8)",
+      "default_value": "8",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

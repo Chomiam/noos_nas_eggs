@@ -1,0 +1,38 @@
+{
+  "id": "left-4-dead-2",
+  "name": "Left 4 Dead 2 Dedicated Server",
+  "author": "Valve & Noos NAS",
+  "category": "Horreur / Coopératif",
+  "icon": "🧟‍♂️",
+  "tagline": "Survivez à l'apocalypse zombie à 4 en coopération intense à travers le Sud des USA",
+  "description": "Serveur dédié Valve SRCDS pour Left 4 Dead 2. Supporte les campagnes coopératives classiques, le mode Versus compétitif, Survival et Scavenge avec le Director IA.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/left-4-dead-2/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/left-4-dead-2/banner.jpg",
+  "steam_app_id": "222860",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 27015,
+  "port_protocol": "both",
+  "extra_ports": [],
+  "default_memory_mb": 4096,
+  "min_memory_mb": 2048,
+  "startup_cmd": "./srcds_run -game left4dead2 -console -port {{SERVER_PORT}} +maxplayers {{MAX_PLAYERS}} +map {{SRCDS_MAP}}",
+  "variables": [
+    {
+      "name": "Carte de départ",
+      "env_variable": "SRCDS_MAP",
+      "description": "Campagne et chapitre initial",
+      "default_value": "c1m1_hotel",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Nombre maximum de joueurs",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Capacité joueurs (4 pour Coop, 8 pour Versus)",
+      "default_value": "8",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

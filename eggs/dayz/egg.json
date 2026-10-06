@@ -1,0 +1,52 @@
+{
+  "id": "dayz",
+  "name": "DayZ Dedicated Server",
+  "author": "Bohemia Interactive & Noos NAS",
+  "category": "Survie Post-Apocalyptique",
+  "icon": "☣️",
+  "tagline": "Survivez à l'infection, aux autres survivants et à la famine en Tcherno",
+  "description": "Serveur dédié multijoueur officiel DayZ propulsé par Proton. Carte gigantesque de Chernarus ou Livonia, gestion balistique réaliste, blessures, véhicules et survie sans concession.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/dayz/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/dayz/banner.jpg",
+  "steam_app_id": "223350",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 2302,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 27016,
+      "protocol": "udp",
+      "description": "Port Steam Query"
+    }
+  ],
+  "default_memory_mb": 8192,
+  "min_memory_mb": 4096,
+  "startup_cmd": "wine DayZServer_x64.exe -config=serverDZ.cfg -port={{SERVER_PORT}} -profiles=profiles -BEpath=battleye",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom du serveur DayZ",
+      "default_value": "DayZ Noos NAS Chernarus",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mot de passe Administrateur",
+      "env_variable": "ADMIN_PASSWORD",
+      "description": "Mot de passe RCON",
+      "default_value": "NoosDayzAdmin123!",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Nombre de survivants max",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Capacité max",
+      "default_value": "60",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

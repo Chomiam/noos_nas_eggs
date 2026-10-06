@@ -1,0 +1,38 @@
+{
+  "id": "black-mesa",
+  "name": "Black Mesa Dedicated Server",
+  "author": "Crowbar Collective & Noos NAS",
+  "category": "FPS Multijoueur",
+  "icon": "☢️",
+  "tagline": "Le remake officiel et modernisé du mythique Half-Life en affrontement multijoueur",
+  "description": "Serveur dédié Linux SRCDS pour Black Mesa Multiplayer (BM:DM). Combattez au pied-de-biche, fusil à pompe et canon à gluons dans les laboratoires emblématiques du complexe Black Mesa.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/black-mesa/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/black-mesa/banner.jpg",
+  "steam_app_id": "346680",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 27015,
+  "port_protocol": "both",
+  "extra_ports": [],
+  "default_memory_mb": 4096,
+  "min_memory_mb": 2048,
+  "startup_cmd": "./srcds_run -game bms -console -port {{SERVER_PORT}} +maxplayers {{MAX_PLAYERS}} +map {{SRCDS_MAP}}",
+  "variables": [
+    {
+      "name": "Carte initiale",
+      "env_variable": "SRCDS_MAP",
+      "description": "Carte de départ",
+      "default_value": "dm_bounce",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Capacité joueurs",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Nombre max de combattants",
+      "default_value": "16",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

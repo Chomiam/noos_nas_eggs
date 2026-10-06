@@ -5,7 +5,7 @@
   # 🎮 Noos Game Eggs Hub
   ### *Le Hub Officiel de Serveurs de Jeux Vidéo Dédiés pour Noos NAS Edition*
 
-  [![Games Count](https://img.shields.io/badge/Catalogue-10%20Jeux%20Certifi%C3%A9s-brightgreen?style=for-the-badge&logo=gamepad&logoColor=white)](https://github.com/Chomiam/noos_nas_eggs)
+  [![Games Count](https://img.shields.io/badge/Catalogue-50%20Jeux%20Certifi%C3%A9s-brightgreen?style=for-the-badge&logo=gamepad&logoColor=white)](https://github.com/Chomiam/noos_nas_eggs)
   [![Standard](https://img.shields.io/badge/Format-Pterodactyl%20Eggs%20V2-blue?style=for-the-badge)](#)
   [![Cost](https://img.shields.io/badge/%C3%89conomies-0%E2%82%AC%20de%20Location%2Fmois-orange?style=for-the-badge)](#)
   [![Isolation](https://img.shields.io/badge/Isolation-Conteneurs%20Docker%20%C3%89tanches-teal?style=for-the-badge&logo=docker&logoColor=white)](#)
@@ -39,18 +39,58 @@ Avec **Noos Game Eggs Hub**, votre serveur de stockage personnel se transforme e
 
 Chaque Egg de ce dépôt a été méticuleusement configuré, testé sur NixOS/Docker, traduit en français avec ports déclarés, icônes officielles HD et bannières panoramiques :
 
-| Jeu | Catégorie | Mémoire Conseillée | Ports Réseau | Points Forts de l'Egg |
+| Jeu | Catégorie | Mémoire Conseillée | Ports Réseau | Description / Rôle |
 | :--- | :--- | :--- | :--- | :--- |
-| **Minecraft: Java Edition** | Bac à sable / Survie | 4 Go | `25565/both` | Détection automatique des versions Paper/Spigot/Vanilla, support des plugins et mods. |
-| **Minecraft: Bedrock Edition** | Bac à sable / Crossplay | 2 Go | `19132/udp` | Idéal pour consoles (Switch, PS5, Xbox), tablettes et smartphones. |
-| **Palworld Dedicated Server** | Aventure / Survie | 8 Go | `8211/udp` | Optimisation de la mémoire vive et persistance des bases et Pals des joueurs. |
-| **Valheim Dedicated Server** | Survie Mythologique | 4 Go | `2456/udp`, `2457/udp` | Synchronisation automatique des mondes et sauvegardes régulières. |
-| **7 Days to Die** | Survie Zombie / Craft | 8 Go | `26900/both`, `8081/tcp` | Prise en charge du panneau d'administration web et des cartes procédurales. |
-| **Project Zomboid** | Survie Hardcore | 4 Go | `16261/udp`, `16262/udp` | Gestion simplifiée des mods Steam Workshop et réglages bac à sable. |
-| **Rust Dedicated Server** | Survie PvP / Craft | 8 Go | `28015/udp`, `28016/tcp` | Serveur dédié officiel avec support de l'application Rust+ et console RCON. |
-| **Terraria Dedicated Server** | Aventure 2D Sandbox | 2 Go | `7777/both` | Très faible consommation de ressources, fluide jusqu'à 16 joueurs simultanés. |
-| **Enshrouded Dedicated Server** | Action RPG / Survie | 8 Go | `15636/udp`, `15637/udp` | Mondes voxel haute fidélité pour explorer l'univers en coopération. |
-| **Counter-Strike 2** | FPS Compétitif | 4 Go | `27015/both`, `27020/udp` | Serveur officiel basé sur le moteur Source 2 avec tick rate élevé. |
+| **7 Days to Die Dedicated Server** | Survie / Post-Apocalyptique | 8 Go | `26900/both` | Survivez à la horde du 7ème jour dans un monde voxel hostile |
+| **ARK: Survival Ascended Dedicated Server** | Survie / Dinosaures | 16 Go | `7777/udp` | L'expérience ARK réinventée sous Unreal Engine 5 avec rendu next-gen |
+| **ARK: Survival Evolved Dedicated Server** | Survie / Dinosaures | 12 Go | `7777/udp` | Domptez des dinosaures et survivez sur une île préhistorique mystérieuse |
+| **Abiotic Factor Dedicated Server** | Sci-Fi / Survie Coop | 8 Go | `7777/udp` | Survivez en tant que scientifiques face à des anomalies paranormales en centre souterrain |
+| **Arma 3 Dedicated Server** | Simulation Militaire | 8 Go | `2302/udp` | Simulation de combat militaire réaliste et tactique en monde ouvert gigantesque |
+| **Assetto Corsa Dedicated Server** | Course / Simulation | 4 Go | `9600/both` | Simulation de course automobile ultra-réaliste avec physique de pointe |
+| **Astroneer Dedicated Server** | Exploration Spatiale | 6 Go | `8777/udp` | Explorez et façonnez des mondes lointains à l'ère des grandes découvertes aérospatiales |
+| **Barotrauma Dedicated Server** | Simulation / Sous-Marin | 4 Go | `27015/udp` | Pilotez un sous-marin dans les profondeurs glaciales et hostiles d'Europe |
+| **Black Mesa Dedicated Server** | FPS Multijoueur | 4 Go | `27015/both` | Le remake officiel et modernisé du mythique Half-Life en affrontement multijoueur |
+| **Conan Exiles Dedicated Server** | Survie / Barbares | 8 Go | `7777/udp` | Survivez, bâtissez et dominez dans les Terres Exilées impitoyables de Conan |
+| **Core Keeper Dedicated Server** | Aventure / Sandbox 2D | 4 Go | `27015/udp` | Explorez une caverne sans fin de reliques, de créatures et de ressources en coop |
+| **Counter-Strike 2 Dedicated Server** | FPS Compétitif | 4 Go | `27015/both` | Le summum du tir tactique et compétitif par Valve |
+| **Counter-Strike: Source Dedicated Server** | FPS Compétitif | 2 Go | `27015/both` | L'incontournable classique Source du combat terroristes contre antiterroristes |
+| **DayZ Dedicated Server** | Survie Post-Apocalyptique | 8 Go | `2302/udp` | Survivez à l'infection, aux autres survivants et à la famine en Tcherno |
+| **Don't Starve Together Dedicated Server** | Survie / Aventure | 4 Go | `10999/udp` | Explorez et survivez ensemble dans un univers hostile façonné à la main |
+| **Eco Dedicated Server** | Écologie & Civilisation | 8 Go | `3000/both` | Bâtissez une civilisation florissante pour détruire un météore sans ruiner l'écosystème |
+| **Empyrion: Galactic Survival Dedicated Server** | Survie Galactique | 8 Go | `30000/udp` | Aventure spatiale 3D avec exploration planétaire, construction et combats |
+| **Enshrouded Dedicated Server** | Survie / Action RPG | 8 Go | `15636/udp` | Explorez le royaume déchu d'Embervale dans ce RPG de survie voxel |
+| **Factorio Headless Server** | Automatisation / Gestion | 4 Go | `34197/udp` | Construisez et défendez des usines automatisées géantes sur une planète hostile |
+| **Foundry Dedicated Server** | Usine & Voxel | 8 Go | `22500/udp` | Automatisez une usine colossale dans un monde voxel infini généré procéduralement |
+| **Garry's Mod Dedicated Server** | Bac à sable Source | 4 Go | `27015/both` | Sandbox physique multijoueur légendaire sous Source Engine (TTT, DarkRP) |
+| **HumanitZ Dedicated Server** | Survie Post-Apocalyptique | 6 Go | `7777/udp` | Survie en vue isométrique dans un monde ouvert envahi par les Zeeks |
+| **Icarus Dedicated Server** | Survie Sci-Fi | 12 Go | `17777/udp` | Survivez sur une planète terraformée hostile lors de missions chronométrées |
+| **Insurgency: Sandstorm Dedicated Server** | FPS Tactique | 6 Go | `27102/udp` | FPS tactique hardcore en combats urbains au Moyen-Orient axé sur le jeu d'équipe |
+| **Killing Floor 2 Dedicated Server** | Horreur / Coopératif | 4 Go | `7777/udp` | Affrontez des vagues incessantes de spécimens mutants Zeds à 6 joueurs en coop |
+| **Left 4 Dead 2 Dedicated Server** | Horreur / Coopératif | 4 Go | `27015/both` | Survivez à l'apocalypse zombie à 4 en coopération intense à travers le Sud des USA |
+| **Minecraft: Bedrock Edition** | Bac à sable / Survie | 2 Go | `19132/udp` | Serveur officiel Mojang BDS pour consoles, smartphones et Windows 10/11 |
+| **Minecraft: Java Edition** | Bac à sable / Survie | 4 Go | `25565/both` | Serveur Minecraft Java haute performance propulsé par PaperMC 1.21+ |
+| **Mordhau Dedicated Server** | Combat Médiéval | 6 Go | `7777/udp` | Combats médiévaux sanglants et précis à la première personne à grande échelle |
+| **Myth of Empires Dedicated Server** | Sandbox Multijoueur Médiéval | 12 Go | `7777/udp` | Bâtissez un empire oriental féodal, recrutez des armées et menez des sièges colossaux |
+| **Night of the Dead Dedicated Server** | Tower Defense / Survie | 8 Go | `7777/udp` | Construisez une forteresse bardée de pièges mécaniques pour repousser les hordes nocturnes |
+| **No More Room in Hell Dedicated Server** | Horreur / Survie Coop | 2 Go | `27015/both` | Survie réaliste et désespérée face à la mort vivante inspirée des films de Romero |
+| **Palworld Dedicated Server** | Aventure / Survie | 8 Go | `8211/udp` | Serveur multijoueur Palworld avec multithreading et persistance |
+| **Project Zomboid Dedicated Server** | Survie Zombie Hardcore | 4 Go | `16261/udp` | L'ultime simulateur de survie apocalypse zombie en multijoueur |
+| **Rust Dedicated Server** | Survie PvP / Sandbox | 8 Go | `28015/udp` | Survie sans pitié, construction de base et PvP brutal |
+| **Satisfactory Dedicated Server** | Usine & Automatisation | 8 Go | `7777/udp` | Construisez des usines colossales et automatisez la production sur une planète alien |
+| **Sons of the Forest Dedicated Server** | Horreur / Survie | 8 Go | `8766/udp` | Survivez aux cannibales et mutants sur une île isolée cauchemardesque |
+| **Soulmask Dedicated Server** | Survie / Tribale | 8 Go | `8777/udp` | Échappez au rituel sacrificiel et découvrez les secrets des masques ancestraux |
+| **Space Engineers Dedicated Server** | Simulation Spatiale | 12 Go | `27016/udp` | Construisez des vaisseaux, stations spatiales et avant-postes planétaires réalistes |
+| **Squad Dedicated Server** | FPS Tactique | 8 Go | `7787/udp` | Combats tactiques par escouades combinées à grande échelle à 100 joueurs |
+| **Starbound Dedicated Server** | Sandbox Spatial 2D | 4 Go | `21025/tcp` | Explorez un univers procédural infini à bord de votre propre vaisseau spatial |
+| **Stationeers Dedicated Server** | Ingénierie Spatiale | 6 Go | `27016/udp` | Gérez la pression, l'atmosphère et les circuits d'une station spatiale complexe |
+| **Stormworks: Build and Rescue Dedicated Server** | Sauvetage / Véhicules | 6 Go | `25564/both` | Concevez hélicoptères, bateaux et sous-marins pour des missions de sauvetage héroïques |
+| **Team Fortress 2 Dedicated Server** | FPS Compétitif | 4 Go | `27015/both` | Le FPS par équipes légendaire de Valve aux 9 classes emblématiques |
+| **Terraria Dedicated Server** | Aventure / Sandbox 2D | 2 Go | `7777/both` | Exploration, construction et combats de boss en 2D multijoueur |
+| **The Forest Dedicated Server** | Horreur / Survie | 6 Go | `27016/udp` | Construisez, explorez et survivez dans une forêt infestée de cannibales |
+| **Unturned Dedicated Server** | Survie / Post-Apocalyptique | 4 Go | `27015/both` | Survie zombie voxel en monde ouvert avec artisanat, conduite et barricades |
+| **V Rising Dedicated Server** | Action RPG / Vampires | 8 Go | `9876/udp` | Réveillez-vous en vampire, bâtissez votre château gothique et régnez sur Vardoran |
+| **Valheim Dedicated Server** | Survie Mythologique | 4 Go | `2456/udp` | Serveur dédié viking persistant dans un monde procédural nordique |
+| **Vintage Story Dedicated Server** | Survie / Voxel Réaliste | 4 Go | `42420/tcp` | Survie hardcore intransigeante dans un monde voxel axée sur la géologie et l'artisanat |
 
 ---
 

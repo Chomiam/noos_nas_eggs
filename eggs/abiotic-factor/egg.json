@@ -1,0 +1,52 @@
+{
+  "id": "abiotic-factor",
+  "name": "Abiotic Factor Dedicated Server",
+  "author": "Deep Field Games & Noos NAS",
+  "category": "Sci-Fi / Survie Coop",
+  "icon": "☣️",
+  "tagline": "Survivez en tant que scientifiques face à des anomalies paranormales en centre souterrain",
+  "description": "Serveur dédié multijoueur Abiotic Factor propulsé par Proton. Fabriquez des gadgets scientifiques de fortune, repoussez les incursions interdimensionnelles et échappez-vous du complexe GATE.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/abiotic-factor/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/abiotic-factor/banner.jpg",
+  "steam_app_id": "2857200",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 7777,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 27015,
+      "protocol": "udp",
+      "description": "Port Steam Query"
+    }
+  ],
+  "default_memory_mb": 8192,
+  "min_memory_mb": 4096,
+  "startup_cmd": "wine AbioticFactor/Binaries/Win64/AbioticFactorServer-Win64-Shipping.exe -Port={{SERVER_PORT}} -QueryPort={{QUERY_PORT}} -MaxServerPlayers={{MAX_PLAYERS}} -WorldSaveName=\"{{WORLD_NAME}}\"",
+  "variables": [
+    {
+      "name": "Nom du monde / sauvegarde",
+      "env_variable": "WORLD_NAME",
+      "description": "Nom de la partie",
+      "default_value": "GateFacility",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Port Query",
+      "env_variable": "QUERY_PORT",
+      "description": "Port Query Steam",
+      "default_value": "27015",
+      "input_type": "number",
+      "options": null
+    },
+    {
+      "name": "Nombre de scientifiques max",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Joueurs max (1-6)",
+      "default_value": "6",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

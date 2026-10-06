@@ -27,7 +27,7 @@
       "name": "Nom du serveur",
       "env_variable": "SERVER_NAME",
       "description": "Nom affiché dans la liste des serveurs communautaires CS2",
-      "default_value": "Serveur CS2 STEvE_OS",
+      "default_value": "Serveur CS2 Noos NAS",
       "input_type": "text",
       "options": null
     },
@@ -77,7 +77,7 @@
       "name": "Mot de passe RCON",
       "env_variable": "RCON_PASSWORD",
       "description": "Mot de passe de télé-administration RCON console",
-      "default_value": "SteveRconAdmin123!",
+      "default_value": "NoosAdmin123!",
       "input_type": "password",
       "options": null
     },

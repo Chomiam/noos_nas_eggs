@@ -1,0 +1,38 @@
+{
+  "id": "astroneer",
+  "name": "Astroneer Dedicated Server",
+  "author": "System Era Softworks & Noos NAS",
+  "category": "Exploration Spatiale",
+  "icon": "🧑‍🚀",
+  "tagline": "Explorez et façonnez des mondes lointains à l'ère des grandes découvertes aérospatiales",
+  "description": "Serveur dédié officiel Astroneer sous Proton. Déformez le terrain à volonté avec l'outil de terraformation, automatisez vos bases et construisez des fusées pour explorer les planètes du système solaire.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/astroneer/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/astroneer/banner.jpg",
+  "steam_app_id": "728470",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 8777,
+  "port_protocol": "udp",
+  "extra_ports": [],
+  "default_memory_mb": 6144,
+  "min_memory_mb": 3072,
+  "startup_cmd": "wine AstroServer.exe",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom affiché",
+      "default_value": "Astroneer Noos NAS Base",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Capacité maximale",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Astronautes max (1-8)",
+      "default_value": "8",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

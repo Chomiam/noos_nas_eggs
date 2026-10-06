@@ -1,0 +1,38 @@
+{
+  "id": "foundry",
+  "name": "Foundry Dedicated Server",
+  "author": "Channel 3 Entertainment & Noos NAS",
+  "category": "Usine & Voxel",
+  "icon": "🏭",
+  "tagline": "Automatisez une usine colossale dans un monde voxel infini généré procéduralement",
+  "description": "Serveur dédié officiel Foundry propulsé par Proton. Bâtissez des chaînes de convoyeurs automatisées géantes, minez des gisements massifs et optimisez des réseaux logistiques en coopération.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/foundry/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/foundry/banner.jpg",
+  "steam_app_id": "2915550",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 22500,
+  "port_protocol": "udp",
+  "extra_ports": [],
+  "default_memory_mb": 8192,
+  "min_memory_mb": 4096,
+  "startup_cmd": "wine FoundryDedicatedServer.exe -batchmode -nographics -port={{SERVER_PORT}}",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom de la manufacture",
+      "default_value": "Foundry Noos NAS Factory",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Capacité joueurs",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Ingénieurs max",
+      "default_value": "8",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

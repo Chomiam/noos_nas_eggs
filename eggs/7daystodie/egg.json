@@ -37,7 +37,7 @@
       "name": "Nom du serveur",
       "env_variable": "SERVER_NAME",
       "description": "Nom affiché dans la liste des serveurs multijoueur 7DTD",
-      "default_value": "Serveur 7 Days to Die STEvE_OS",
+      "default_value": "Serveur 7 Days to Die Noos NAS",
       "input_type": "text",
       "options": null
     },
@@ -53,7 +53,7 @@
       "name": "Mot de passe Administrateur (Telnet)",
       "env_variable": "ADMIN_PASSWORD",
       "description": "Mot de passe de gestion console / Telnet",
-      "default_value": "SteveAdminPass123!",
+      "default_value": "NoosAdminPass123!",
       "input_type": "password",
       "options": null
     },
@@ -75,7 +75,7 @@
       "name": "Nom de la sauvegarde (Game Name)",
       "env_variable": "GAME_NAME",
       "description": "Nom unique du dossier de sauvegarde de la partie",
-      "default_value": "SteveWorld",
+      "default_value": "NoosWorld",
       "input_type": "text",
       "options": null
     },

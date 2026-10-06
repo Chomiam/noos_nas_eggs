@@ -1,0 +1,30 @@
+{
+  "id": "vintage-story",
+  "name": "Vintage Story Dedicated Server",
+  "author": "Anego Studios & Noos NAS",
+  "category": "Survie / Voxel Réaliste",
+  "icon": "⛏️",
+  "tagline": "Survie hardcore intransigeante dans un monde voxel axée sur la géologie et l'artisanat",
+  "description": "Serveur dédié multijoueur officiel pour Vintage Story. Prospérez à travers les âges (pierre, cuivre, bronze, fer), maîtrisez l'agriculture saisonnière, le travail de l'argile et la forge minutieuse.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/vintage-story/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/vintage-story/banner.jpg",
+  "steam_app_id": null,
+  "docker_image": "ghcr.io/parkervcp/yolks:dotnet_7",
+  "default_port": 42420,
+  "port_protocol": "tcp",
+  "extra_ports": [],
+  "default_memory_mb": 4096,
+  "min_memory_mb": 2048,
+  "startup_cmd": "./VintagestoryServer --dataPath /home/container/data --port={{SERVER_PORT}}",
+  "variables": [
+    {
+      "name": "Nom du monde Vintage Story",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom affiché aux pionniers",
+      "default_value": "Vintage Story Noos NAS World",
+      "input_type": "text",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}
