@@ -9,7 +9,7 @@
   "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/openttd/icon.png",
   "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/openttd/banner.jpg",
   "steam_app_id": null,
-  "docker_image": "ghcr.io/parkervcp/yolks:debian",
+  "docker_image": "ghcr.io/ropenttd/openttd:latest",
   "default_port": 3979,
   "port_protocol": "tcp",
   "extra_ports": [

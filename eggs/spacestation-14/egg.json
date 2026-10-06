@@ -9,7 +9,7 @@
   "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/spacestation-14/icon.png",
   "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/spacestation-14/banner.jpg",
   "steam_app_id": null,
-  "docker_image": "ghcr.io/parkervcp/yolks:debian",
+  "docker_image": "ghcr.io/ptero-eggs/yolks:debian",
   "default_port": 1212,
   "port_protocol": "udp",
   "extra_ports": [],

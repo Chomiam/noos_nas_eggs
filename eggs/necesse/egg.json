@@ -9,13 +9,13 @@
   "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/necesse/icon.png",
   "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/necesse/banner.jpg",
   "steam_app_id": "1169370",
-  "docker_image": "ghcr.io/pterodactyl/yolks:java_21",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
   "default_port": 14159,
   "port_protocol": "udp",
   "extra_ports": [],
   "default_memory_mb": 3072,
   "min_memory_mb": 1024,
-  "startup_cmd": "java -jar Server.jar -port {{SERVER_PORT}} -world {{WORLD_NAME}}",
+  "startup_cmd": "./jre/bin/java -Xms128M -Xmx{{SERVER_MEMORY}}M -Dterminal.jline=false -Dterminal.ansi=true -jar Server.jar -localdir -nogui -world {{WORLD_NAME}} -port {{SERVER_PORT}}",
   "variables": [
     {
       "name": "Nom du monde",

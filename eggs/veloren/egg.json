@@ -9,7 +9,7 @@
   "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/veloren/icon.png",
   "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/veloren/banner.jpg",
   "steam_app_id": null,
-  "docker_image": "ghcr.io/parkervcp/yolks:debian",
+  "docker_image": "ubuntu:24.04",
   "default_port": 14004,
   "port_protocol": "udp",
   "extra_ports": [],
