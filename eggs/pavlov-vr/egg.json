@@ -1,0 +1,46 @@
+{
+  "id": "pavlov-vr",
+  "name": "Pavlov VR Dedicated Server",
+  "author": "Vankrupt Games & Noos NAS",
+  "category": "VR / Tir Tactique",
+  "icon": "🥽",
+  "tagline": "Le FPS tactique compétitif numéro 1 en réalité virtuelle",
+  "description": "Serveur dédié multijoueur officiel pour Pavlov VR avec support des modes Recherche & Destruction, Deathmatch, TTT et cartes personnalisées du Workshop.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/pavlov-vr/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/pavlov-vr/banner.jpg",
+  "steam_app_id": "622970",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 7777,
+  "port_protocol": "udp",
+  "extra_ports": [],
+  "default_memory_mb": 6144,
+  "min_memory_mb": 3072,
+  "startup_cmd": "./PavlovServer.sh -PORT={{SERVER_PORT}}",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom affiché dans la liste des serveurs VR",
+      "default_value": "Pavlov VR Noos NAS",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Carte par défaut",
+      "env_variable": "MAP",
+      "description": "Nom de la carte de départ",
+      "default_value": "datacenter",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Joueurs Maximum",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Nombre max de casques",
+      "default_value": "10",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

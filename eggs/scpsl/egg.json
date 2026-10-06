@@ -1,0 +1,38 @@
+{
+  "id": "scpsl",
+  "name": "SCP: Secret Laboratory Dedicated Server",
+  "author": "Northwood Studios & Noos NAS",
+  "category": "Horreur / Survie Multijoueur",
+  "icon": "👁️",
+  "tagline": "Survivez aux anomalies du site de confinement ou éliminez les intrus",
+  "description": "Serveur dédié officiel pour SCP: Secret Laboratory sous Linux natif avec gestion des rôles (Classe D, Scientifiques, FIM, Chaos Insurgency et entités SCP).",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/scpsl/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/scpsl/banner.jpg",
+  "steam_app_id": "996560",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 7777,
+  "port_protocol": "udp",
+  "extra_ports": [],
+  "default_memory_mb": 4096,
+  "min_memory_mb": 2048,
+  "startup_cmd": "./LocalAdmin {{SERVER_PORT}}",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom affiché sur la liste publique SCP",
+      "default_value": "Serveur SCP:SL Noos NAS",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Nombre maximum de joueurs",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Capacité max de joueurs",
+      "default_value": "20",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

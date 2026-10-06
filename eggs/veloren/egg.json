@@ -1,0 +1,38 @@
+{
+  "id": "veloren",
+  "name": "Veloren Dedicated Server",
+  "author": "Veloren Community (100% Rust)",
+  "category": "RPG / Voxel Open-Source (Rust)",
+  "icon": "🌲",
+  "tagline": "RPG multijoueur open-source développé en Rust dans un monde féérique en voxels",
+  "description": "Serveur officiel pour Veloren, le magnifique jeu de rôle open-source écrit en Rust inspiré de Cube World, Dwarf Fortress et Breath of the Wild.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/veloren/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/veloren/banner.jpg",
+  "steam_app_id": null,
+  "docker_image": "ghcr.io/parkervcp/yolks:debian",
+  "default_port": 14004,
+  "port_protocol": "udp",
+  "extra_ports": [],
+  "default_memory_mb": 3072,
+  "min_memory_mb": 1024,
+  "startup_cmd": "./veloren-server-cli",
+  "variables": [
+    {
+      "name": "Description du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom du monde Veloren",
+      "default_value": "Monde Veloren Noos NAS (Rust)",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Joueurs Maximum",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Capacité max d'aventuriers",
+      "default_value": "16",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

@@ -1,0 +1,52 @@
+{
+  "id": "mindustry",
+  "name": "Mindustry Dedicated Server",
+  "author": "Anuken & Noos NAS",
+  "category": "Stratégie / Logistique & Usines",
+  "icon": "⚙️",
+  "tagline": "Gestion de convoyeurs, production industrielle et défense de base multijoueur",
+  "description": "Serveur dédié officiel pour Mindustry, le hit de gestion logistique et de tower defense open-source avec crossplay total PC et mobiles.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/mindustry/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/mindustry/banner.jpg",
+  "steam_app_id": null,
+  "docker_image": "ghcr.io/pterodactyl/yolks:java_21",
+  "default_port": 6567,
+  "port_protocol": "tcp",
+  "extra_ports": [
+    {
+      "port": 6567,
+      "protocol": "udp",
+      "description": "Port de découverte réseau Mindustry"
+    }
+  ],
+  "default_memory_mb": 1536,
+  "min_memory_mb": 512,
+  "startup_cmd": "java -jar server.jar port {{SERVER_PORT}} host {{MAP}}",
+  "variables": [
+    {
+      "name": "Nom du secteur/serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom du serveur",
+      "default_value": "Usine Mindustry Noos",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Carte de départ",
+      "env_variable": "MAP",
+      "description": "Nom de la carte",
+      "default_value": "groundZero",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Joueurs Maximum",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Nombre de joueurs",
+      "default_value": "16",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

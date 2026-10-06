@@ -1,0 +1,60 @@
+{
+  "id": "beamng-beammp",
+  "name": "BeamNG.drive (BeamMP Dedicated Server)",
+  "author": "BeamMP & BeamNG GmbH",
+  "category": "Simulation / Automobile",
+  "icon": "🚗",
+  "tagline": "Serveur multijoueur officiel BeamMP pour BeamNG.drive avec physique ultra-réaliste",
+  "description": "Serveur dédié multijoueur haute performance BeamMP pour BeamNG.drive permettant d'héberger des sessions de conduite libre, courses et crashs synchronisés entre amis.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/beamng-beammp/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/beamng-beammp/banner.jpg",
+  "steam_app_id": null,
+  "docker_image": "ghcr.io/parkervcp/yolks:debian",
+  "default_port": 8999,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 8999,
+      "protocol": "tcp",
+      "description": "Port d'authentification BeamMP"
+    }
+  ],
+  "default_memory_mb": 2048,
+  "min_memory_mb": 512,
+  "startup_cmd": "./BeamMP-Server",
+  "variables": [
+    {
+      "name": "Clé d'authentification AuthKey (obtenue sur beammp.com)",
+      "env_variable": "AUTH_KEY",
+      "description": "Clé secrète d'enregistrement BeamMP",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom affiché dans la liste des serveurs",
+      "default_value": "Serveur BeamMP Noos NAS",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Carte par défaut",
+      "env_variable": "MAP",
+      "description": "Chemin de la carte",
+      "default_value": "/levels/gridmap_v2/info.json",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Nombre maximum de joueurs",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Capacité max de joueurs",
+      "default_value": "8",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

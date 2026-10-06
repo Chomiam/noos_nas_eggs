@@ -1,0 +1,46 @@
+{
+  "id": "subnautica-nitrox",
+  "name": "Subnautica (Nitrox Multiplayer Server)",
+  "author": "Nitrox Team & Unknown Worlds",
+  "category": "Survie / Exploration Sous-Marine",
+  "icon": "🌊",
+  "tagline": "Explorez les fonds marins de la planète 4546B en coopération avec le mod Nitrox",
+  "description": "Serveur dédié pour le mod multijoueur Nitrox de Subnautica permettant la construction conjointe de bases sous-marines et l'exploration synchronisée.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/subnautica-nitrox/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/subnautica-nitrox/banner.jpg",
+  "steam_app_id": null,
+  "docker_image": "ghcr.io/parkervcp/yolks:debian",
+  "default_port": 11000,
+  "port_protocol": "udp",
+  "extra_ports": [],
+  "default_memory_mb": 4096,
+  "min_memory_mb": 2048,
+  "startup_cmd": "./NitroxServer --port {{SERVER_PORT}}",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom de la partie",
+      "default_value": "Monde Sous-Marin Noos",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mot de passe",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Mot de passe d'accès",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Plongeurs Maximum",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Nombre de joueurs",
+      "default_value": "4",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

@@ -1,0 +1,52 @@
+{
+  "id": "sunkenland",
+  "name": "Sunkenland Dedicated Server",
+  "author": "Vector3 Studio & Noos NAS",
+  "category": "Survie / Océan & Exploration",
+  "icon": "🤿",
+  "tagline": "Survie post-apocalyptique dans un monde submergé : plongée, bases flottantes et raids",
+  "description": "Serveur dédié pour Sunkenland avec exploration de villes englouties, confection d'armes, véhicules maritimes et défense contre les pirates.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/sunkenland/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/sunkenland/banner.jpg",
+  "steam_app_id": "2631960",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 27015,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 27016,
+      "protocol": "udp",
+      "description": "Port de requête Steam Query"
+    }
+  ],
+  "default_memory_mb": 8192,
+  "min_memory_mb": 4096,
+  "startup_cmd": "wine SunkenlandServer.exe -Port={{SERVER_PORT}}",
+  "variables": [
+    {
+      "name": "Nom du monde aquatique",
+      "env_variable": "WORLD_NAME",
+      "description": "Nom du monde",
+      "default_value": "AtollNoos",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mot de passe",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Mot de passe d'accès",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Joueurs Maximum",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Capacité max de survivants",
+      "default_value": "8",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

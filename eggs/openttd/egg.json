@@ -1,0 +1,52 @@
+{
+  "id": "openttd",
+  "name": "OpenTTD Dedicated Server",
+  "author": "OpenTTD Team",
+  "category": "Gestion / Transports & Trains",
+  "icon": "🚆",
+  "tagline": "Le simulateur de réseau ferroviaire et de transport de marchandises légendaire",
+  "description": "Serveur dédié multijoueur pour OpenTTD pour créer des réseaux de trains, camions, bateaux et avions en compétition ou coopération économique permanente.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/openttd/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/openttd/banner.jpg",
+  "steam_app_id": null,
+  "docker_image": "ghcr.io/parkervcp/yolks:debian",
+  "default_port": 3979,
+  "port_protocol": "tcp",
+  "extra_ports": [
+    {
+      "port": 3979,
+      "protocol": "udp",
+      "description": "Port de découverte réseau OpenTTD"
+    }
+  ],
+  "default_memory_mb": 1024,
+  "min_memory_mb": 256,
+  "startup_cmd": "openttd -D -p {{SERVER_PORT}}",
+  "variables": [
+    {
+      "name": "Nom de la compagnie/serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom du serveur",
+      "default_value": "Réseau Ferré Noos",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mot de passe",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Mot de passe d'accès",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Nombre max d'entreprises",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Nombre max d'entreprises",
+      "default_value": "15",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

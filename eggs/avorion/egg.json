@@ -1,0 +1,57 @@
+{
+  "id": "avorion",
+  "name": "Avorion Dedicated Server",
+  "author": "Boxelware & Noos NAS",
+  "category": "Espace / Bac à Sable",
+  "icon": "🚀",
+  "tagline": "Construisez votre vaisseau spatial voxel, formez des flottes et conquérez la galaxie",
+  "description": "Serveur dédié natif Linux pour Avorion avec simulation spatiale dynamique, économie procédurale, combats de factions et commerce galactique multijoueur.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/avorion/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/avorion/banner.jpg",
+  "steam_app_id": "565060",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 27000,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 27003,
+      "protocol": "udp",
+      "description": "Port Steam Query"
+    },
+    {
+      "port": 27020,
+      "protocol": "tcp",
+      "description": "Port RCON"
+    }
+  ],
+  "default_memory_mb": 6144,
+  "min_memory_mb": 2048,
+  "startup_cmd": "./server.sh --galaxy-name {{GALAXY_NAME}} --port {{SERVER_PORT}}",
+  "variables": [
+    {
+      "name": "Nom de la galaxie",
+      "env_variable": "GALAXY_NAME",
+      "description": "Nom de la galaxie sauvegardée",
+      "default_value": "GalaxieNoos",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mot de passe",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Mot de passe de connexion",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Joueurs Maximum",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Capacité maximale de capitaines",
+      "default_value": "10",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

@@ -1,0 +1,60 @@
+{
+  "id": "the-front",
+  "name": "The Front Dedicated Server",
+  "author": "Samar Studio & Noos NAS",
+  "category": "Survie / Militaire & Sandbox",
+  "icon": "🛡️",
+  "tagline": "Guerre post-apocalyptique, véhicules blindés, tourelles et défense de base contre les vagues",
+  "description": "Serveur dédié officiel pour The Front sous Unreal Engine permettant de concevoir des bases imprenables, fabriquer des chars/hélicoptères et repousser des hordes hostiles.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/the-front/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/the-front/banner.jpg",
+  "steam_app_id": "2612550",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 7777,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 27015,
+      "protocol": "udp",
+      "description": "Port de requête Steam Query"
+    }
+  ],
+  "default_memory_mb": 10240,
+  "min_memory_mb": 6144,
+  "startup_cmd": "wine TheFrontServer.exe -Port={{SERVER_PORT}} -QueryPort={{QUERY_PORT}}",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom du serveur The Front",
+      "default_value": "Serveur The Front Noos NAS",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mot de passe",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Mot de passe d'accès",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Port Query Steam",
+      "env_variable": "QUERY_PORT",
+      "description": "Port Query",
+      "default_value": "27015",
+      "input_type": "number",
+      "options": null
+    },
+    {
+      "name": "Joueurs Maximum",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Capacité max de joueurs",
+      "default_value": "32",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

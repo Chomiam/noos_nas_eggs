@@ -1,0 +1,52 @@
+{
+  "id": "arma-reforger",
+  "name": "Arma Reforger Dedicated Server",
+  "author": "Bohemia Interactive & Noos NAS",
+  "category": "MilSim / Tir Tactique",
+  "icon": "🎖️",
+  "tagline": "Guerre froide sur l'île d'Everon propulsée par le tout nouveau moteur Enfusion",
+  "description": "Serveur dédié officiel pour Arma Reforger sous moteur Enfusion avec simulation militaire réaliste, capture de zones et support des mods Workshop.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/arma-reforger/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/arma-reforger/banner.jpg",
+  "steam_app_id": "1874900",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 2001,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 17777,
+      "protocol": "udp",
+      "description": "Port de requête Steam Query"
+    }
+  ],
+  "default_memory_mb": 8192,
+  "min_memory_mb": 4096,
+  "startup_cmd": "./ArmaReforgerServer -config ./server.json -port {{SERVER_PORT}}",
+  "variables": [
+    {
+      "name": "Nom de l'opération/serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom dans le navigateur de serveurs",
+      "default_value": "Opération Noos Reforger",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mot de passe",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Mot de passe d'accès",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Nombre de soldats max",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Capacité max",
+      "default_value": "32",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

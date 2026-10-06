@@ -1,0 +1,57 @@
+{
+  "id": "wreckfest",
+  "name": "Wreckfest Dedicated Server",
+  "author": "Bugbear Entertainment & Noos NAS",
+  "category": "Course / Destruction",
+  "icon": "🏁",
+  "tagline": "Courses de banger et derbies de démolition avec gestion de dégâts poussée",
+  "description": "Serveur dédié multijoueur officiel pour Wreckfest avec rotation de circuits, modes derby, gestion des collisions et bots personnalisables.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/wreckfest/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/wreckfest/banner.jpg",
+  "steam_app_id": "361580",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 27015,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 27016,
+      "protocol": "udp",
+      "description": "Port de requête Steam Query"
+    },
+    {
+      "port": 33540,
+      "protocol": "udp",
+      "description": "Port local de communication"
+    }
+  ],
+  "default_memory_mb": 6144,
+  "min_memory_mb": 4096,
+  "startup_cmd": "wine Wreckfest.exe -s server_config.cfg",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom du serveur affiché",
+      "default_value": "Serveur Wreckfest Noos NAS",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mot de passe",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Mot de passe d'accès",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Joueurs Maximum",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Nombre max de pilotes",
+      "default_value": "24",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

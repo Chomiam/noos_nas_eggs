@@ -1,0 +1,38 @@
+{
+  "id": "spacestation-14",
+  "name": "Space Station 14 Dedicated Server",
+  "author": "Space Wizards Federation",
+  "category": "Simulation / Jeu de Rôle Spatial",
+  "icon": "🛸",
+  "tagline": "Remake moderne et chaotique en C# de Space Station 13 à bord d'une station de recherche",
+  "description": "Serveur dédié pour Space Station 14 avec simulation physique d'atmosphère, gestion de réacteur, chimie, traîtres infiltrés et rôles de bord complets.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/spacestation-14/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/spacestation-14/banner.jpg",
+  "steam_app_id": null,
+  "docker_image": "ghcr.io/parkervcp/yolks:debian",
+  "default_port": 1212,
+  "port_protocol": "udp",
+  "extra_ports": [],
+  "default_memory_mb": 3072,
+  "min_memory_mb": 1024,
+  "startup_cmd": "./Robust.Server --config cvars.cfg",
+  "variables": [
+    {
+      "name": "Nom de la station",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom du vaisseau/station",
+      "default_value": "Station Noos-14",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Membres d'équipage maximum",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Capacité max",
+      "default_value": "32",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

@@ -1,0 +1,60 @@
+{
+  "id": "truck-simulator",
+  "name": "Euro Truck Simulator 2 & ATS Dedicated Server",
+  "author": "SCS Software & Noos NAS",
+  "category": "Simulation / Convois",
+  "icon": "🚛",
+  "tagline": "Serveur de convoi persistant officiel pour Euro Truck Simulator 2 et American Truck Simulator",
+  "description": "Serveur dédié officiel SCS Software pour héberger des sessions de convoi multijoueur permanentes sans dépendre d'un joueur hôte.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/truck-simulator/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/truck-simulator/banner.jpg",
+  "steam_app_id": "1948160",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
+  "default_port": 27015,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 27016,
+      "protocol": "udp",
+      "description": "Port de requête secondaire Steam"
+    }
+  ],
+  "default_memory_mb": 4096,
+  "min_memory_mb": 2048,
+  "startup_cmd": "./bin/linux_x64/eurotrucks2_server",
+  "variables": [
+    {
+      "name": "Nom du convoi",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom du convoi affiché en jeu",
+      "default_value": "Convoi Noos NAS",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mot de passe de session",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Mot de passe d'accès (optionnel)",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Code de connexion Logon Code",
+      "env_variable": "LOGON_CODE",
+      "description": "Code généré depuis la console Steam de l'hôte",
+      "default_value": "",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Nombre maximum de camions",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Nombre de camions dans le convoi",
+      "default_value": "8",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

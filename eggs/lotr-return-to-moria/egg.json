@@ -1,0 +1,46 @@
+{
+  "id": "lotr-return-to-moria",
+  "name": "The Lord of the Rings: Return to Moria Dedicated Server",
+  "author": "Free Range Games & North Beach Games",
+  "category": "Survie / Fantasy & Co-op",
+  "icon": "⛏️",
+  "tagline": "Reconquérez et reconstruisez le royaume perdu de la Moria avec vos compagnons nains",
+  "description": "Serveur dédié officiel pour Return to Moria avec génération procédurale des profondeurs de Khazad-dûm, minage, forge et combats contre les orques.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/lotr-return-to-moria/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/lotr-return-to-moria/banner.jpg",
+  "steam_app_id": "3087260",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 7777,
+  "port_protocol": "udp",
+  "extra_ports": [],
+  "default_memory_mb": 8192,
+  "min_memory_mb": 4096,
+  "startup_cmd": "wine MoriaServer.exe -Port={{SERVER_PORT}}",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom affiché dans la liste des serveurs",
+      "default_value": "Moria Noos NAS",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mot de passe",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Mot de passe d'accès",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Joueurs Maximum",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Nombre max de nains",
+      "default_value": "8",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

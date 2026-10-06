@@ -1,0 +1,46 @@
+{
+  "id": "mount-and-blade-bannerlord",
+  "name": "Mount & Blade II: Bannerlord Dedicated Server",
+  "author": "TaleWorlds Entertainment & Noos NAS",
+  "category": "Action / Médiéval & Stratégie",
+  "icon": "⚔️",
+  "tagline": "Affrontements et sièges de châteaux massifs dans l'univers de Calradia",
+  "description": "Serveur dédié multijoueur pour Mount & Blade II: Bannerlord supportant les modes Siège, Capitaine, Escarmouche et Bataille avec des dizaines de combattants.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/mount-and-blade-bannerlord/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/mount-and-blade-bannerlord/banner.jpg",
+  "steam_app_id": "1863440",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 7210,
+  "port_protocol": "udp",
+  "extra_ports": [],
+  "default_memory_mb": 8192,
+  "min_memory_mb": 4096,
+  "startup_cmd": "wine TaleWorlds.MountAndBlade.DedicatedCustomServer.exe _MODULES_*Native*Multiplayer*_MODULES_",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom de la bataille dans le lobby",
+      "default_value": "Serveur Bannerlord Noos NAS",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mot de passe",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Mot de passe d'accès",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Joueurs Maximum",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Capacité de joueurs",
+      "default_value": "64",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}

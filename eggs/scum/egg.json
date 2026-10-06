@@ -1,0 +1,52 @@
+{
+  "id": "scum",
+  "name": "SCUM Dedicated Server",
+  "author": "Gamepires & Jagex",
+  "category": "Survie / Réalisme Extrême",
+  "icon": "🩸",
+  "tagline": "Survie pénitentiaire hyper-réaliste sur une île impitoyable avec métabolisme poussé",
+  "description": "Serveur dédié officiel pour SCUM avec gestion détaillée de la nutrition, balistique avancée, crafting et affrontements PvP/PvE intenses.",
+  "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/scum/icon.png",
+  "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/scum/banner.jpg",
+  "steam_app_id": "2765340",
+  "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+  "default_port": 7777,
+  "port_protocol": "udp",
+  "extra_ports": [
+    {
+      "port": 27015,
+      "protocol": "udp",
+      "description": "Port de requête Steam Query"
+    }
+  ],
+  "default_memory_mb": 10240,
+  "min_memory_mb": 6144,
+  "startup_cmd": "wine SCUMServer.exe -Port={{SERVER_PORT}}",
+  "variables": [
+    {
+      "name": "Nom du serveur",
+      "env_variable": "SERVER_NAME",
+      "description": "Nom du serveur pénitentiaire",
+      "default_value": "Prison de l'Île Noos SCUM",
+      "input_type": "text",
+      "options": null
+    },
+    {
+      "name": "Mot de passe",
+      "env_variable": "SERVER_PASSWORD",
+      "description": "Mot de passe",
+      "default_value": "",
+      "input_type": "password",
+      "options": null
+    },
+    {
+      "name": "Joueurs Maximum",
+      "env_variable": "MAX_PLAYERS",
+      "description": "Capacité max de détenus",
+      "default_value": "32",
+      "input_type": "number",
+      "options": null
+    }
+  ],
+  "is_custom": false
+}
