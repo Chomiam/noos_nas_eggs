@@ -2025,17 +2025,17 @@
       "category": "Action / Médiéval & Stratégie",
       "icon": "⚔️",
       "tagline": "Affrontements et sièges de châteaux massifs dans l'univers de Calradia",
-      "description": "Serveur dédié multijoueur pour Mount & Blade II: Bannerlord supportant les modes Siège, Capitaine, Escarmouche et Bataille avec des dizaines de combattants.",
+      "description": "Serveur dédié multijoueur natif Linux 64-bit (.NET 6) pour Mount & Blade II: Bannerlord supportant les modes Siège, Capitaine, Escarmouche et Bataille avec des dizaines de combattants.",
       "icon_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/mount-and-blade-bannerlord/icon.png",
       "banner_url": "https://raw.githubusercontent.com/Chomiam/noos_nas_eggs/main/eggs/mount-and-blade-bannerlord/banner.jpg",
       "steam_app_id": "1863440",
-      "docker_image": "ghcr.io/parkervcp/steamcmd:proton",
+      "docker_image": "ghcr.io/parkervcp/steamcmd:debian",
       "default_port": 7210,
       "port_protocol": "udp",
       "extra_ports": [],
       "default_memory_mb": 8192,
       "min_memory_mb": 4096,
-      "startup_cmd": "wine TaleWorlds.MountAndBlade.DedicatedCustomServer.exe _MODULES_*Native*Multiplayer*_MODULES_",
+      "startup_cmd": "cd /home/container/bin/Linux64_Shipping_Server && dotnet TaleWorlds.Starter.DotNetCore.Linux.dll _MODULES_*Native*Multiplayer*_MODULES_ /dedicatedcustomserverconfigfile ds_config.txt /dedicatedcustomserver {{SERVER_PORT}} USER 0",
       "variables": [
         {
           "name": "Nom du serveur",
@@ -2051,6 +2051,14 @@
           "description": "Mot de passe d'accès",
           "default_value": "",
           "input_type": "password",
+          "options": null
+        },
+        {
+          "name": "Jeton d'authentification TaleWorlds (Auth Token)",
+          "env_variable": "AUTH_TOKEN",
+          "description": "Jeton généré en jeu via la console multijoueur (Alt + ~ puis 'customserver.gettoken')",
+          "default_value": "",
+          "input_type": "text",
           "options": null
         },
         {
