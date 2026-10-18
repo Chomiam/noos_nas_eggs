@@ -1899,7 +1899,32 @@
           "paper",
           "purpur",
           "fabric",
+          "neoforge",
+          "forge",
           "vanilla"
+        ]
+      },
+      {
+        "name": "Version de Java (Runtime JVM)",
+        "env_variable": "JAVA_VERSION",
+        "description": "Version de la JVM utilisée pour lancer le serveur. « auto » déduit la version de Java adaptée à la version Minecraft (ex: 1.12.2 → Java 8, 1.20.6+ → Java 21)",
+        "default_value": "auto",
+        "input_type": "select",
+        "options": [
+          "auto",
+          "7",
+          "8",
+          "11",
+          "14",
+          "16",
+          "17",
+          "18",
+          "19",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25"
         ]
       },
       {
